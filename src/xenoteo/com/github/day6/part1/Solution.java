@@ -19,7 +19,7 @@ public class Solution {
     /**
      * Finding a sum of group's counts of questions for which anyone in a group answered "yes".
      * Complexity is O(G * P), where N is a number of groups and P is a number of people in the groups.
-     * @param groups list of groups, representing sequences of questions for which people from the group answered "yes"
+     * @param groups list of groups, representing list of sequences of questions for which people from the group answered "yes"
      * @return sum of group's counts of questions for which anyone in a group answered "yes"
      */
     public int sumOfGroupCounts(List<List<String>> groups){
@@ -32,7 +32,7 @@ public class Solution {
 
     /**
      * Counts questions for which anyone in a group answered "yes".
-     * @param group sequences of questions for which people from the group answered "yes"
+     * @param group list of sequences of questions for which people from the group answered "yes"
      * @return count of questions for which anyone in a group answered "yes"
      */
     private int countQuestions(List<String> group){
