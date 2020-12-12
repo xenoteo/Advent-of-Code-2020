@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * Proceeding input file and converting it to an integer array.
+ * Proceeding input file.
  */
 public class InputReader {
 
@@ -16,7 +16,7 @@ public class InputReader {
      * @param filename the name of the file to read data from
      * @return data converted to integer array
      */
-    public int[] readInputFile(String filename){
+    public int[] readInputFileToIntArray(String filename){
         try {
             List<Integer> input = new ArrayList<>();
             Scanner scanner = new Scanner(new File(filename));
@@ -25,6 +25,27 @@ public class InputReader {
             }
             scanner.close();
             return listToArray(input);
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    /**
+     * Reads data from the input file with provided filename.
+     * @param filename the name of the file to read data from
+     * @return data converted to string list
+     */
+    public List<String> readInputFileToStringList(String filename){
+        try {
+            List<String> input = new ArrayList<>();
+            Scanner scanner = new Scanner(new File(filename));
+            while (scanner.hasNextLine()) {
+                input.add(scanner.nextLine());
+            }
+            scanner.close();
+            return input;
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
