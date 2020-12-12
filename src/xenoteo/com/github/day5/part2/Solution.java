@@ -20,7 +20,7 @@ public class Solution {
     /**
      * Finding the only one free pass ID from given passes.
      * Pass ID = row * 8 + column.
-     * Wanted pass ID is not at vary front or back, that is the seats with IDs +1 and -1 from wanted will be in a list.
+     * Wanted pass ID is not at very front or back, that is the seats with IDs +1 and -1 from wanted will be in a list.
      * @param passes passes to analyze
      * @return the highest seat ID
      */
