@@ -17,3 +17,6 @@ Advent od Code 2020.
 - \[[day 5](https://github.com/xenoteo/Advent-2020/tree/master/src/xenoteo/com/github/day5)\] - decoding airplane pass. Instead of zones or groups, the airline uses binary space partitioning to seat people. A seat might be specified like FBFBBFFRLR, where F means "front", B means "back", L means "left", and R means "right".
   - \[[part 1](https://github.com/xenoteo/Advent-2020/blob/master/src/xenoteo/com/github/day5/part1/Solution.java)\] - finding the maximum pass ID from given passes.
   - \[[part 2](https://github.com/xenoteo/Advent-2020/blob/master/src/xenoteo/com/github/day5/part2/Solution.java)\] - finding the only one free pass ID from given passes (not at the very front or back).
+- \[[day 6](https://github.com/xenoteo/Advent-2020/tree/master/src/xenoteo/com/github/day6)\] - the form asks a series of 26 yes-or-no questions marked a through z. Identifying the questions for which people from a group answered "yes".
+  - \[[part 1](https://github.com/xenoteo/Advent-2020/blob/master/src/xenoteo/com/github/day6/part1/Solution.java)\] - finding a sum of group's counts of questions for which anyone in a group answered "yes".
+  - \[[part 2](https://github.com/xenoteo/Advent-2020/blob/master/src/xenoteo/com/github/day6/part2/Solution.java)\] - finding a sum of group's counts of questions for which everyone in a group answered "yes".
