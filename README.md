@@ -20,3 +20,6 @@ Advent od Code 2020.
 - \[[day 6](https://github.com/xenoteo/Advent-2020/tree/master/src/xenoteo/com/github/day6)\] - the form asks a series of 26 yes-or-no questions marked a through z. Identifying the questions for which people from a group answered "yes".
   - \[[part 1](https://github.com/xenoteo/Advent-2020/blob/master/src/xenoteo/com/github/day6/part1/Solution.java)\] - finding a sum of group's counts of questions for which anyone in a group answered "yes".
   - \[[part 2](https://github.com/xenoteo/Advent-2020/blob/master/src/xenoteo/com/github/day6/part2/Solution.java)\] - finding a sum of group's counts of questions for which everyone in a group answered "yes".
+- \[[day 7](https://github.com/xenoteo/Advent-2020/tree/master/src/xenoteo/com/github/day7)\] - given rules specifying the required contents of colored bags (bags must be color-coded and must contain specific quantities of other color-coded bags).
+  - \[[part 1](https://github.com/xenoteo/Advent-2020/blob/master/src/xenoteo/com/github/day7/part1/Solution.java)\] - counting how many bag colors can eventually contain at least one shiny gold bag.
+  - \[[part 2](https://github.com/xenoteo/Advent-2020/blob/master/src/xenoteo/com/github/day7/part2/Solution.java)\] - counting how many individual bags are required inside a single shiny gold bag.
