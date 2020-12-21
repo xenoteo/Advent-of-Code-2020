@@ -24,7 +24,28 @@ public class InputReader {
                 input.add(Integer.valueOf(scanner.nextLine()));
             }
             scanner.close();
-            return listToArray(input);
+            return this.listToIntArray(input);
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    /**
+     * Reads data from the input file with provided filename.
+     * @param filename the name of the file to read data from
+     * @return data converted to long array
+     */
+    public long[] readInputFileToLongArray(String filename){
+        try {
+            List<Long> input = new ArrayList<>();
+            Scanner scanner = new Scanner(new File(filename));
+            while (scanner.hasNextLine()) {
+                input.add(Long.valueOf(scanner.nextLine()));
+            }
+            scanner.close();
+            return listToLongArray(input);
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
@@ -58,8 +79,21 @@ public class InputReader {
      * @param list to convert
      * @return integer array
      */
-    private int[] listToArray(List<Integer> list){
+    private int[] listToIntArray(List<Integer> list){
         int[] arr = new int[list.size()];
+        for (int i = 0; i < arr.length; i++){
+            arr[i] = list.get(i);
+        }
+        return arr;
+    }
+
+    /**
+     * Converts a list to a long array.
+     * @param list to convert
+     * @return long array
+     */
+    private long[] listToLongArray(List<Long> list){
+        long[] arr = new long[list.size()];
         for (int i = 0; i < arr.length; i++){
             arr[i] = list.get(i);
         }
