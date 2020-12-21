@@ -13,7 +13,7 @@ public class Solution {
      * @param arr array of numbers
      * @return  the first invalid number
      */
-    public long fistInvalidNumber(long[] arr){
+    public long firstInvalidNumber(long[] arr){
         int left = 0;
         int right = 24;
         for (int i = 25; i < arr.length; i++){
