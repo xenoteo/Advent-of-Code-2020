@@ -32,5 +32,7 @@
 - \[[day 10](https://github.com/xenoteo/Advent-2020/tree/master/src/xenoteo/com/github/day10)\] - given a list of all of the joltage adapters in a bag. Each of joltage adapters is rated for a specific output joltage. Any given adapter can take an input 1, 2, or 3 jolts lower than its rating and still produce its rated output joltage. In addition, the device has a built-in joltage adapter rated for 3 jolts higher than the highest-rated adapter in the bag. The charging outlet has an effective joltage rating of 0.
   - \[[part 1](https://github.com/xenoteo/Advent-2020/blob/master/src/xenoteo/com/github/day10/part1/Solution.java)\] - finds the number of 1-jolt differences multiplied by the number of 3-jolt differences.
   - \[[part 2](https://github.com/xenoteo/Advent-2020/blob/master/src/xenoteo/com/github/day10/part2/Solution.java)\] - counts the total number of distinct ways of adapter arrangements.
-  
+- \[[day 11](https://github.com/xenoteo/Advent-2020/tree/master/src/xenoteo/com/github/day11)\] - The seat layout fits neatly on a grid. Each position is either floor (.), an empty seat (L), or an occupied seat (#). Running seats rearrangements according to required rules. Simulating the seating area by applying the seating rules repeatedly until no seats change state.
+  - \[[part 1](https://github.com/xenoteo/Advent-2020/blob/master/src/xenoteo/com/github/day11/part1/Solution.java)\] - all decisions are based on the number of occupied seats adjacent to a given seat.
+  - \[[part 2](https://github.com/xenoteo/Advent-2020/blob/master/src/xenoteo/com/github/day11/part2/Solution.java)\] - all decisions are based on the number of the first seats seen in each of eight directions.
 
