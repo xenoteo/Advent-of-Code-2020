@@ -75,6 +75,15 @@ public class InputReader {
     }
 
     /**
+     * Reads data from the input file with provided filename.
+     * @param filename the name of the file to read data from
+     * @return data converted to 2D char array
+     */
+    public char[][] readInputFileTo2DCharArray(String filename){
+        return stringListTo2DCharArray(readInputFileToStringList(filename));
+    }
+
+    /**
      * Converts a list to an integer array.
      * @param list to convert
      * @return integer array
@@ -96,6 +105,22 @@ public class InputReader {
         long[] arr = new long[list.size()];
         for (int i = 0; i < arr.length; i++){
             arr[i] = list.get(i);
+        }
+        return arr;
+    }
+
+    /**
+     * Converts a list of strings to a 2D char array.
+     * @param list to convert
+     * @return 2D char array
+     */
+    private char[][] stringListTo2DCharArray(List<String> list){
+        char[][] arr = new char[list.size()][list.get(0).length()];
+        for (int i = 0; i < list.size(); i++){
+            String line = list.get(i);
+            for (int j = 0; j < line.length(); j++){
+                arr[i][j] = line.charAt(j);
+            }
         }
         return arr;
     }
