@@ -16,6 +16,8 @@ public class Solution {
 
     /**
      * Given starting numbers, finding what number will be the 2020th number spoken.
+     * Using list to keep all the numbers spoken.
+     * TIme complexity is O(N^2).
      * @param startingNumbers starting numbers
      * @return number that will be the 2020th number spoken
      */
