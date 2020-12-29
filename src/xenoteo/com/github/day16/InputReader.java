@@ -2,9 +2,7 @@ package xenoteo.com.github.day16;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Proceeding input file.
@@ -30,7 +28,12 @@ public class InputReader {
      * One rule is 4 numbers: starts and ends of two ranges (in the order of occurrences in the line).
      * The list of such rules.
      */
-    private List<List<Integer>> rules;
+    private Map<String,List<Integer>> rules;
+
+    /**
+     * A list representing a ticket.
+     */
+    private List<Integer> myTicket;
 
     /**
      * Each ticket is a list of numbers present in the line.
@@ -43,7 +46,7 @@ public class InputReader {
      * @param filename the filename
      */
     public void readInputFile(String filename){
-        rules = new ArrayList<>();
+        rules = new HashMap<>();
         nearbyTickets = new ArrayList<>();
         try {
             Scanner scanner = new Scanner(new File(filename));
@@ -59,13 +62,12 @@ public class InputReader {
             }
 
             scanner.nextLine();
-            scanner.nextLine();
+            myTicket = processTicket(scanner.nextLine());
             scanner.nextLine();
             scanner.nextLine();
 
             while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                processTicket(line);
+                nearbyTickets.add(processTicket(scanner.nextLine()));
             }
             scanner.close();
         } catch (FileNotFoundException e) {
@@ -81,8 +83,9 @@ public class InputReader {
     private void processRule(String line){
         List<Integer> rule = new ArrayList<>();
 
-        int split1 = line.indexOf(':') + 2;
-        String ranges = line.substring(split1);
+        int split1 = line.indexOf(':');
+        String key = line.substring(0, split1);
+        String ranges = line.substring(split1 + 2);
 
         int split2 = ranges.indexOf("or");
         String firstRange = ranges.substring(0, split2 - 1);
@@ -90,7 +93,7 @@ public class InputReader {
 
         processRange(rule, firstRange);
         processRange(rule, secondRange);
-        rules.add(rule);
+        rules.put(key, rule);
     }
 
     /**
@@ -109,22 +112,39 @@ public class InputReader {
     /**
      * Processes the string representing a ticket.
      * @param line a line representing a ticket.
+     * @return a list representing a ticket
      */
-    private void processTicket(String line){
+    private List<Integer> processTicket(String line){
         String[] numbers = line.split(",");
         List<Integer> ticket = new ArrayList<>();
         for (String number : numbers){
             ticket.add(Integer.parseInt(number));
         }
-        nearbyTickets.add(ticket);
+        return ticket;
     }
 
     /**
      * Gets the list of rules.
      * @return the list of rules
      */
-    public List<List<Integer>> getRules() {
+    public Map<String, List<Integer>> getRules() {
         return rules;
+    }
+
+    public List<List<Integer>> getRulesList(){
+        List<List<Integer>> rulesList = new ArrayList<>();
+        for (Map.Entry<String, List<Integer>> pair : rules.entrySet()){
+            rulesList.add(pair.getValue());
+        }
+        return rulesList;
+    }
+
+    /**
+     * Gets my ticket.
+     * @return my ticket
+     */
+    public List<Integer> getMyTicket() {
+        return myTicket;
     }
 
     /**
