@@ -50,3 +50,6 @@
 - \[[day 16](https://github.com/xenoteo/Advent-2020/tree/master/src/xenoteo/com/github/day16)\] - the rules for ticket fields specify a list of fields that exist somewhere on the ticket and the valid ranges of values for each field. Each ticket is represented by a single line of comma-separated values.
   - \[[part 1](https://github.com/xenoteo/Advent-2020/blob/master/src/xenoteo/com/github/day16/part1/Solution.java)\] - determining which tickets are completely invalid; these are tickets that contain values which aren't valid for any field. Adding together all of the invalid values.
   - \[[part 2](https://github.com/xenoteo/Advent-2020/blob/master/src/xenoteo/com/github/day16/part2/Solution.java)\] - determining which field is which and finding a multiplication of 6 departure values.
+- \[[day 17](https://github.com/xenoteo/Advent-2020/tree/master/src/xenoteo/com/github/day17)\]
+  - \[[part 1](https://github.com/xenoteo/Advent-2020/blob/master/src/xenoteo/com/github/day17/part1/Solution.java)\] - 3D Game of Life
+  - \[[part 2](https://github.com/xenoteo/Advent-2020/blob/master/src/xenoteo/com/github/day17/part2/Solution.java)\] - 4D Game of Life
