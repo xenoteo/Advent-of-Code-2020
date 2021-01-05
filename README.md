@@ -56,3 +56,6 @@
 - \[[day 18](https://github.com/xenoteo/Advent-2020/tree/master/src/xenoteo/com/github/day18)\] - expressions consist of addition (+), multiplication (\*), and parentheses ((...)). Just like normal math, parentheses indicate that the expression inside must be evaluated before it can be used by the surrounding expression. The rules of operator precedence have changed.
   - \[[part 1](https://github.com/xenoteo/Advent-2020/blob/master/src/xenoteo/com/github/day18/part1/Solution.java)\] - the operators have the same precedence, and are evaluated left-to-right regardless of the order in which they appear.
   - \[[part 2](https://github.com/xenoteo/Advent-2020/blob/master/src/xenoteo/com/github/day18/part2/Solution.java)\] - rather than evaluating multiplication before addition, addition is evaluated before multiplication.
+- \[[day 19](https://github.com/xenoteo/Advent-2020/tree/master/src/xenoteo/com/github/day19)\] - the rules for valid messages are numbered and build upon each other. Determining the number of messages that completely match rule 0.
+  - \[[part 1](https://github.com/xenoteo/Advent-2020/blob/master/src/xenoteo/com/github/day19/part1/Solution.java)\] - there are no loops in the rules.
+  - \[[part 2](https://github.com/xenoteo/Advent-2020/blob/master/src/xenoteo/com/github/day19/part2/Solution.java)\] - some of the rules do contain loops.
