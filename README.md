@@ -1,5 +1,5 @@
-# Advent 2020
-[Advent od Code 2020](https://adventofcode.com/2020).
+# Advent of Code 2020
+[Advent of Code 2020](https://adventofcode.com/2020).
 
 ## Problems
 - \[[day 1](https://github.com/xenoteo/Advent-2020/tree/master/src/xenoteo/com/github/day1)\]
