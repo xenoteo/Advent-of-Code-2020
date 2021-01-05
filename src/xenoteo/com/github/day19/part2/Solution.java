@@ -16,6 +16,8 @@ import java.util.regex.Pattern;
  * Some of the rules have multiple lists of sub-rules separated by a pipe (|). This means that at least one list of
  * sub-rules must match.
  *
+ * Some of the rules do contain loops.
+ *
  * Determining the number of messages that completely match rule 0.
  */
 public class Solution {
@@ -30,17 +32,22 @@ public class Solution {
     public int messagesMatchingRule0(Map<Integer, String> autonomousRules,
                                      Map<Integer, List<List<Integer>>> dependentRules,
                                      List<String> messages){
-        String possibleFormat = possibleFormatsOfRule(0, autonomousRules, dependentRules, new HashMap<>());
-        return countAppropriateMessages(messages, possibleFormat);
+        String ruleFormat = ruleFormat(0, autonomousRules, dependentRules, new HashMap<>());
+        return countAppropriateMessages(messages, ruleFormat);
     }
 
-    private int countAppropriateMessages(List<String> messages, String possibleFormat){
-        Pattern pattern;
+    /**
+     * Counts messages matching provided format.
+     * @param messages the list of messages
+     * @param regex provided format
+     * @return the number of messages matching privided format
+     */
+    private int countAppropriateMessages(List<String> messages, String regex){
         int count = 0;
         for (String message : messages){
             for (int n = 1; n <=  5; n++){
-                String format = possibleFormat.replace("n", "" + n);
-                pattern = Pattern.compile(format);
+                String format = regex.replace("n", "" + n);
+                Pattern pattern = Pattern.compile(format);
                 if (pattern.matcher(message).matches()) {
                     count++;
                     break;
@@ -50,45 +57,48 @@ public class Solution {
         return count;
     }
 
-    private String possibleFormatsOfRule(int ruleIndex,
-                                         Map<Integer, String> autonomousRules,
-                                         Map<Integer, List<List<Integer>>> dependentRules,
-                                         Map<Integer, String> memoryMap){
-        if (memoryMap.containsKey(ruleIndex))
-            return memoryMap.get(ruleIndex);
+    /**
+     * Finds regex representing a format of the provided rule.
+     * @param ruleIndex a rule's index
+     * @param autonomousRules the map of autonomous rules
+     * @param dependentRules the map of dependent rules
+     * @param memoryMap a memory map used for dynamic programming
+     * @return regex representing a format of the provided rule
+     */
+    private String ruleFormat(int ruleIndex,
+                              Map<Integer, String> autonomousRules,
+                              Map<Integer, List<List<Integer>>> dependentRules,
+                              Map<Integer, String> memoryMap){
+        // special cases
+        if (ruleIndex == 8) {
+            String specialCase = "(" + ruleFormat(42, autonomousRules, dependentRules, memoryMap) + ")+";
+            memoryMap.put(ruleIndex, specialCase);
+        }
 
-        if (autonomousRules.containsKey(ruleIndex)) {
+        else if (ruleIndex == 11) {
+            String specialCase =
+                    "(" + ruleFormat(42, autonomousRules, dependentRules, memoryMap) + "){n}"
+                            + "(" + ruleFormat(31, autonomousRules, dependentRules, memoryMap) + "){n}";
+            memoryMap.put(ruleIndex, specialCase);
+        }
+
+        else if (autonomousRules.containsKey(ruleIndex)) {
             memoryMap.put(ruleIndex, autonomousRules.get(ruleIndex));
-            return memoryMap.get(ruleIndex);
         }
 
-        StringBuilder format = new StringBuilder("(");
-        for (List<Integer> dependency : dependentRules.get(ruleIndex)){
-            boolean recursiveDivided = false;
-            for (int i = 0; i < dependency.size(); i++){
-                int index = dependency.get(i);
-                if (index == ruleIndex){
-                    format.insert(0, "(");
-                    if (i == dependency.size() - 1){
-                        format.append(")+");
-                    }
-                    else {
-                        recursiveDivided = true;
-                        format.append("){n}(");
-                    }
+        else if (!memoryMap.containsKey(ruleIndex)){
+            StringBuilder format = new StringBuilder("(");
+            for (List<Integer> dependency : dependentRules.get(ruleIndex)){
+                for (int index : dependency){
+                    format.append(ruleFormat(index, autonomousRules, dependentRules, memoryMap));
                 }
-                else
-                    format.append(possibleFormatsOfRule(index, autonomousRules, dependentRules, memoryMap));
+                format.append("|");
             }
-            if (recursiveDivided){
-                format.append("){n}");
-            }
-            format.append("|");
-        }
-        format.deleteCharAt(format.length() - 1);
-        format.append(")");
+            format.setCharAt(format.length() - 1, ')');
 
-        memoryMap.put(ruleIndex, format.toString());
+            memoryMap.put(ruleIndex, format.toString());
+        }
+
         return memoryMap.get(ruleIndex);
     }
 }
