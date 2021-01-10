@@ -28,7 +28,7 @@ If some special input is provided, in the day package can be located the `InputR
   
 Additionally in the day package (or part of the day package, depending on problem) some helpers classes can also be found.  
   
-There is one general `InputReader class`, which reads simple input data and is used for many days.  
+There is one general `InputReader` class, which reads simple input data and is used for many days.  
 
 ## Problems
 Short descriptions of problems. Complete problem contents can be found in README files of day packages.
