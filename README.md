@@ -1,7 +1,31 @@
 # Advent of Code 2020
 [Advent of Code 2020](https://adventofcode.com/2020).
 
+## Project structure
+<pre>
+xenoteo.com.github
+└── dayN
+|   ├── input
+|   |   └── input.txt
+|   ├── part1
+|   │   ├── Main.java
+|   │   └── Solution.java
+|   ├── part2
+|   │   ├── Main.java
+|   │   └── Solution.java
+|   └── README.md
+└── InputReader.java
+</pre>
+In day packages the one general structure is kept.  
+In the input folder there always is the main input.txt file, but there could be more input samples in other files.  
+In part1 and part2 folders there are Main.java and Solution.java files. The Main class is always responsible for displaying the problem’s solution. In Solution class the only public method is the main method implemented to solve the problem, the other methods (if there are) are helpers.  
+There also provided a README file to each of the days.  
+If some special input is provided, in the day package can be located the InputReader.java class responsible for reading data from the input file.  
+Additionally in the day package (or part of the day package, depending on problem) some helpers classes can also be found.  
+There is one general InputReader class, which reads simple input data and is used for many days.  
+
 ## Problems
+Short descriptions of problems. Complete problem contents can be found in README files of day packages.
 - \[[day 1](https://github.com/xenoteo/Advent-2020/tree/master/src/xenoteo/com/github/day1)\]
   - \[[part 1](https://github.com/xenoteo/Advent-2020/blob/master/src/xenoteo/com/github/day1/part1/Solution.java)\] - finding the two entries that sum to x and then multiply those two numbers together.
   - \[[part 2](https://github.com/xenoteo/Advent-2020/blob/master/src/xenoteo/com/github/day1/part2/Solution.java)\] - finding the three entries that sum to x and then multiply those three numbers together.
