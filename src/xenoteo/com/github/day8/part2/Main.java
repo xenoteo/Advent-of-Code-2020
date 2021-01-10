@@ -7,8 +7,9 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        String filePath = "../input/input.txt";
         InputReader inputReader = new InputReader();
-        inputReader.readInputFile("/home/xeno/xWs/Java/Advent-2020/src/xenoteo/com/github/day8/input.txt");
+        inputReader.readInputFile(Main.class.getResource(filePath));
         List<Instructions> instructions = inputReader.getInstructions();
         List<Integer> arguments = inputReader.getArguments();
         System.out.println(new Solution().lastValueBeforeTermination(instructions, arguments));

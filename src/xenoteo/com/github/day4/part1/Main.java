@@ -7,8 +7,8 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        List<Passport> passports = new InputReader()
-                .readInputFile("/home/xeno/xWs/Java/Advent-2020/src/xenoteo/com/github/day4/input.txt");
+        String filePath = "../input/input.txt";
+        List<Passport> passports = new InputReader().readInputFile(Main.class.getResource(filePath));
         System.out.println(new Solution().countValidPassports(passports));
     }
 }

@@ -7,8 +7,8 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        List<Tile> tiles = new InputReader()
-                .readInputFile("/home/xeno/xWs/Java/Advent-2020/src/xenoteo/com/github/day20/input.txt");
+        String filePath = "../input/input.txt";
+        List<Tile> tiles = new InputReader().readInputFile(Main.class.getResource(filePath));
         System.out.println(new Solution().cornersIdMultiplication(tiles));
     }
 }

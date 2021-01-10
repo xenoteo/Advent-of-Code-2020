@@ -6,8 +6,9 @@ import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
+        String filePath = "../input/input.txt";
         HashMap<Integer, Integer> buses = new InputReader()
-                .readInputFileToBusIdMap("/home/xeno/xWs/Java/Advent-2020/src/xenoteo/com/github/day13/input.txt");
+                .readInputFileToBusIdMap(Main.class.getResource(filePath));
         System.out.println(new Solution().findEarliestTimestamp(buses));
     }
 }

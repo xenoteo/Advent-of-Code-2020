@@ -2,6 +2,7 @@ package xenoteo.com.github.day3;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -13,12 +14,12 @@ public class InputReader {
 
     /**
      * Reads data from the input file with provided filename.
-     * @param filename the name of the file to read data from
+     * @param path the path of the file
      * @return data converted to 2d character array
      */
-    public char[][] readMap(String filename){
+    public char[][] readMap(URL path){
         try {
-            Scanner scanner = new Scanner(new File(filename));
+            Scanner scanner = new Scanner(new File(path.getFile()));
             List<String> lines = new ArrayList<>();
             while (scanner.hasNextLine()) {
                 lines.add(scanner.nextLine());

@@ -2,6 +2,7 @@ package xenoteo.com.github.day7;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.net.URL;
 import java.util.*;
 
 /**
@@ -22,13 +23,13 @@ public class InputReader {
      *  bright bronze -> [shiny yellow, muted green, dark gray]
      *  bright orange -> []
      *
-     * @param filename the name of the file to read data from
+     * @param path the path of the file
      * @return hash map representing bag color rules
      */
-    public Map<String, List<String>> readInputFileIntoRuleMap(String filename){
+    public Map<String, List<String>> readInputFileIntoRuleMap(URL path){
         try {
             Map<String, List<String>> rules = new HashMap<>();
-            Scanner scanner = new Scanner(new File(filename));
+            Scanner scanner = new Scanner(new File(path.getFile()));
             while (scanner.hasNextLine()) {
                 String rule = scanner.nextLine();
                 String[] parts = rule.split(" bags contain ");  // dividing a line into two parts,
@@ -89,13 +90,13 @@ public class InputReader {
      *  bright bronze -> [shiny yellow -> 1, muted green -> 5, dark gray -> 3]
      *  bright orange -> []
      *
-     * @param filename the name of the file to read data from
+     * @param path the path of the file
      * @return hash map representing bag color rules
      */
-    public Map<String, HashMap<String, Integer>> readInputFileIntoRuleMapWithNumbers(String filename){
+    public Map<String, HashMap<String, Integer>> readInputFileIntoRuleMapWithNumbers(URL path){
         try {
             Map<String, HashMap<String, Integer>> rules = new HashMap<>();
-            Scanner scanner = new Scanner(new File(filename));
+            Scanner scanner = new Scanner(new File(path.getFile()));
             while (scanner.hasNextLine()) {
                 String rule = scanner.nextLine();
                 String[] parts = rule.split(" bags contain ");  // dividing a line into two parts,

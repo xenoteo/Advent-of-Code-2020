@@ -22,7 +22,6 @@ public class Solution {
     public long cornersIdMultiplication(List<Tile> tiles){
         assignNeighboursToTiles(tiles);
         return countCornersMultiplication(tiles);
-
     }
 
     /**

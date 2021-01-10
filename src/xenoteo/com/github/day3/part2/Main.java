@@ -7,8 +7,8 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        char[][] map = new InputReader()
-                .readMap("/home/xeno/xWs/Java/Advent-2020/src/xenoteo/com/github/day3/input.txt");
+        String filePath = "../input/input.txt";
+        char[][] map = new InputReader().readMap(Main.class.getResource(filePath));
         List<List<Integer>> slopes = getDefaultSlopes();
         System.out.println(new Solution().multiplySlopes(map, slopes));
     }

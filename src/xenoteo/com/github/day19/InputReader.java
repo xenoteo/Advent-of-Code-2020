@@ -2,6 +2,7 @@ package xenoteo.com.github.day19;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
@@ -43,12 +44,12 @@ public class InputReader {
 
     /**
      * Reads data from the input file with provided filename.
-     * @param filename the name of the file to read data from
+     * @param path the path of the file
      */
-    public void readInputFile(String filename){
+    public void readInputFile(URL path){
         setUpMaps();
         try {
-            Scanner scanner = new Scanner(new File(filename));
+            Scanner scanner = new Scanner(new File(path.getFile()));
 
             List<String> ruleLines = new ArrayList<>();
             boolean readingRules = true;

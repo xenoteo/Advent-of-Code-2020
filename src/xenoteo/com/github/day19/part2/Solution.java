@@ -69,12 +69,17 @@ public class Solution {
                               Map<Integer, String> autonomousRules,
                               Map<Integer, List<List<Integer>>> dependentRules,
                               Map<Integer, String> memoryMap){
-        // special cases
+        if (memoryMap.containsKey(ruleIndex)){
+            return memoryMap.get(ruleIndex);
+        }
+
+        // special case
         if (ruleIndex == 8) {
             String specialCase = "(" + ruleFormat(42, autonomousRules, dependentRules, memoryMap) + ")+";
             memoryMap.put(ruleIndex, specialCase);
         }
 
+        // special case
         else if (ruleIndex == 11) {
             String specialCase =
                     "(" + ruleFormat(42, autonomousRules, dependentRules, memoryMap) + "){n}"
@@ -86,7 +91,7 @@ public class Solution {
             memoryMap.put(ruleIndex, autonomousRules.get(ruleIndex));
         }
 
-        else if (!memoryMap.containsKey(ruleIndex)){
+        else {
             StringBuilder format = new StringBuilder("(");
             for (List<Integer> dependency : dependentRules.get(ruleIndex)){
                 for (int index : dependency){

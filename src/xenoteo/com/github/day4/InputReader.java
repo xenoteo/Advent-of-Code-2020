@@ -2,6 +2,7 @@ package xenoteo.com.github.day4;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -12,13 +13,13 @@ import java.util.Scanner;
 public class InputReader {
     /**
      * Reads data from the input file with provided filename.
-     * @param filename the name of the file to read data from
+     * @param path the path of the file
      * @return data converted to Passport list
      */
-    public List<Passport> readInputFile(String filename){
+    public List<Passport> readInputFile(URL path){
         try {
             List<Passport> passports = new ArrayList<>();
-            Scanner scanner = new Scanner(new File(filename));
+            Scanner scanner = new Scanner(new File(path.getFile()));
             Passport lastPassport = new Passport();
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();

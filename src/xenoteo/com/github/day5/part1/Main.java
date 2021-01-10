@@ -6,8 +6,8 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        List<String> passes = new InputReader()
-                .readInputFileToStringList("/home/xeno/xWs/Java/Advent-2020/src/xenoteo/com/github/day5/input.txt");
+        String filePath = "../input/input.txt";
+        List<String> passes = new InputReader().readInputFileToStringList(Main.class.getResource(filePath));
         System.out.println(new Solution().highestSeatId(passes));
     }
 }

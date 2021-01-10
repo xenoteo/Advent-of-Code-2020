@@ -4,8 +4,9 @@ import xenoteo.com.github.day2.InputReader;
 
 public class Main {
     public static void main(String[] args) {
+        String filePath = "../input/input.txt";
         InputReader reader = new InputReader();
-        reader.readInputFile("/home/xeno/xWs/Java/Advent-2020/src/xenoteo/com/github/day2/input.txt");
+        reader.readInputFile(Main.class.getResource(filePath));
         System.out.println(new Solution()
                 .countValidPasswords(
                         reader.getLowests(),

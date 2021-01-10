@@ -6,8 +6,8 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        List<String> expressions = new InputReader()
-                .readInputFileToStringList("/home/xeno/xWs/Java/Advent-2020/src/xenoteo/com/github/day18/input.txt");
+        String filePath = "../input/input.txt";
+        List<String> expressions = new InputReader().readInputFileToStringList(Main.class.getResource(filePath));
         System.out.println(new Solution().sumOfEvaluatedExpressions(expressions));
     }
 }

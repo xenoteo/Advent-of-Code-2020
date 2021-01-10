@@ -2,6 +2,7 @@ package xenoteo.com.github.day12;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -23,13 +24,13 @@ public class InputReader {
     /**
      * Reads data from the input file with provided filename.
      * Writes actions to a list of actions and arguments to a list of values.
-     * @param filename the name of the file to read data from
+     * @param path the path of the file
      */
-    public void readInputFile(String filename) {
+    public void readInputFile(URL path) {
         actions = new ArrayList<>();
         values = new ArrayList<>();
         try {
-            Scanner scanner = new Scanner(new File(filename));
+            Scanner scanner = new Scanner(new File(path.getFile()));
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 String act = line.substring(0, 1);

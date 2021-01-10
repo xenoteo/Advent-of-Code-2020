@@ -2,6 +2,7 @@ package xenoteo.com.github.day20;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.net.URL;
 import java.util.*;
 
 /**
@@ -26,13 +27,13 @@ public class InputReader {
 
     /**
      * Reads data from the input file with provided filename.
-     * @param filename the name of the file to read data from
+     * @param path the path of the file
      * @return a map representing tiles (index -> list of lines)
      */
-    public List<Tile> readInputFile(String filename){
+    public List<Tile> readInputFile(URL path){
         try {
             List<Tile> tiles = new ArrayList<>();
-            Scanner scanner = new Scanner(new File(filename));
+            Scanner scanner = new Scanner(new File(path.getFile()));
             int lastId = -1;
             List<String> lastTileLines = new ArrayList<>();
             while (scanner.hasNextLine()) {

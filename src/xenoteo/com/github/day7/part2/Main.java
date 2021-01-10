@@ -8,8 +8,9 @@ import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
+        String filePath = "../input/input.txt";
         Map<String, HashMap<String, Integer>> rules = new InputReader()
-                .readInputFileIntoRuleMapWithNumbers("/home/xeno/xWs/Java/Advent-2020/src/xenoteo/com/github/day7/input/input.txt");
+                .readInputFileIntoRuleMapWithNumbers(Main.class.getResource(filePath));
         System.out.println(new Solution().countBagsContainedByColor(rules, "shiny gold"));
     }
 }
