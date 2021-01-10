@@ -1,11 +1,8 @@
-package xenoteo.com.github.day14.part2;
+package xenoteo.com.github.day14;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Reading data from input file. Reading all the bitmasks to the list,
@@ -24,27 +21,28 @@ import java.util.Scanner;
  */
 public class InputReader {
     private List<String> masks;
-    private List<MemoryMap> assignments;
+    private List<LinkedHashMap<Integer, Integer>> assignments;
 
     /**
      * Reads data from the input file with provided filename.
      * @param filename the name of the file to read data from
      */
-    public void readInputFile(String filename) {
+    public void readInputFile(String filename){
         try {
             masks = new ArrayList<>();
             assignments = new ArrayList<>();
             Scanner scanner = new Scanner(new File(filename));
-            MemoryMap lastMap = new MemoryMap();
+            LinkedHashMap<Integer, Integer> lastMap = new LinkedHashMap<>();
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
-                if (line.contains("mask")) {
-                    if (!lastMap.isEmpty()) {
+                if (line.contains("mask")){
+                    if(!lastMap.isEmpty()) {
                         assignments.add(lastMap);
-                        lastMap = new MemoryMap();
+                        lastMap = new LinkedHashMap<>();
                     }
                     masks.add(line.substring(7));
-                } else if (line.contains("mem")) {
+                }
+                else if (line.contains("mem")){
                     lastMap.put(
                             Integer.parseInt(line.substring(4, line.indexOf(']'))),
                             Integer.parseInt(line.substring(line.indexOf('=') + 2))
@@ -71,7 +69,7 @@ public class InputReader {
      * Gets the list of all the parts of memory assignments.
      * @return list of the parts of memory assignments
      */
-    public List<MemoryMap> getAssignments() {
+    public List<LinkedHashMap<Integer, Integer>> getAssignments() {
         return assignments;
     }
 }

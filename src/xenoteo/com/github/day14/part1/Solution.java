@@ -1,6 +1,7 @@
 package xenoteo.com.github.day14.part1;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -21,7 +22,7 @@ public class Solution {
      * Mask i corresponds to the part of assignments at the index i.
      * @return the sum of all values left in memory after the initialization program completes
      */
-    public long sumOfAllValuesInMemory(List<String> masks, List<HashMap<Integer, Integer>> assignments){
+    public long sumOfAllValuesInMemory(List<String> masks, List<LinkedHashMap<Integer, Integer>> assignments){
         HashMap<Integer, Long> memory = fillMemory(masks, assignments);
         return findMemorySum(memory);
     }
@@ -32,7 +33,7 @@ public class Solution {
      * @param assignments values and positions where to assign them
      * @return filled memory
      */
-    private HashMap<Integer, Long> fillMemory(List<String> masks, List<HashMap<Integer, Integer>> assignments){
+    private HashMap<Integer, Long> fillMemory(List<String> masks, List<LinkedHashMap<Integer, Integer>> assignments){
         HashMap<Integer, Long> memory = new HashMap<>();
         for (int i = 0; i < masks.size(); i++){
             String mask = masks.get(i);

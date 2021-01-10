@@ -29,7 +29,7 @@ public class Solution {
      * Mask i corresponds to the part of assignments at the index i.
      * @return the sum of all values left in memory after the initialization program completes
      */
-    public long sumOfAllValuesInMemory(List<String> masks, List<MemoryMap> assignments){
+    public long sumOfAllValuesInMemory(List<String> masks, List<LinkedHashMap<Integer, Integer>> assignments){
         HashMap<String, Integer> memory = fillMemory(masks, assignments);
         return findMemorySum(memory);
     }
@@ -40,16 +40,15 @@ public class Solution {
      * @param assignments values and positions where to assign them
      * @return filled memory
      */
-    private HashMap<String, Integer> fillMemory(List<String> masks, List<MemoryMap> assignments){
+    private HashMap<String, Integer> fillMemory(List<String> masks, List<LinkedHashMap<Integer, Integer>> assignments){
         HashMap<String, Integer> memory = new HashMap<>();
         for (int i = 0; i < masks.size(); i++){
             String mask = masks.get(i);
-            MemoryMap memoryMap = assignments.get(i);
-            for (int j = 0; j < memoryMap.size(); j++){
-                StringBuilder addressBuilder = create36bitsBinaryRepresentation(memoryMap.getPositionAtIndex(j));
+            for (Map.Entry<Integer, Integer> pair : assignments.get(i).entrySet()){
+                StringBuilder addressBuilder = create36bitsBinaryRepresentation(pair.getKey());
                 encodeNumberUsingMask(addressBuilder, mask);
                 Set<String> addresses = createAllPossibleAddresses(addressBuilder);
-                putValueToAddresses(memory, addresses, memoryMap.getValueAtIndex(j));
+                putValueToAddresses(memory, addresses, pair.getValue());
             }
         }
         return memory;
