@@ -56,27 +56,6 @@ public class InputReader {
 
     /**
      * Reads data from the input file with provided filename.
-     * @param filename the name of the file to read data from
-     * @return data converted to string list
-     */
-    public List<String> readInputFileToStringList(String filename){
-        try {
-            List<String> input = new ArrayList<>();
-            Scanner scanner = new Scanner(new File(filename));
-            while (scanner.hasNextLine()) {
-                input.add(scanner.nextLine());
-            }
-            scanner.close();
-            return input;
-        } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-    /**
-     * Reads data from the input file with provided filename.
      * @param path the path of the file
      * @return data converted to string list
      */
@@ -94,15 +73,6 @@ public class InputReader {
             e.printStackTrace();
             return null;
         }
-    }
-
-    /**
-     * Reads data from the input file with provided filename.
-     * @param filename the name of the file to read data from
-     * @return data converted to 2D char array
-     */
-    public char[][] readInputFileTo2DCharArray(String filename){
-        return stringListTo2DCharArray(readInputFileToStringList(filename));
     }
 
     /**
