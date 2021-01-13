@@ -14,12 +14,16 @@ import java.util.List;
 public class Solution {
 
     /**
-     * Finding characters at given indexes and checking whether they are valid.
+     * Counts how many passwords are valid according to the policies.
+     *
+     * Finds characters at given indexes and checks whether they are valid.
+     *
      * Complexity is O(N), where N is a number of passwords.
-     * @param lowests list of first positions
-     * @param highests list of second positions
-     * @param letters list of given letters
-     * @param passwords list of passwords
+     *
+     * @param lowests  list of first positions
+     * @param highests  list of second positions
+     * @param letters  list of given letters
+     * @param passwords  list of passwords
      * @return number of valid passwords
      */
     public int countValidPasswords(List<Integer> lowests, List<Integer> highests,

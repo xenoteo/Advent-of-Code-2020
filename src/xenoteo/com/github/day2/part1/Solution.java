@@ -13,12 +13,16 @@ import java.util.List;
 public class Solution {
 
     /**
-     * Counting the frequency of required character in each password and checking whether it is valid.
+     * Counts how many passwords are valid according to the policies.
+     *
+     * Counts the frequency of required character in each password and checks whether it is valid.
+     *
      * Complexity is O(N * S), where N is a number of passwords and S is password's length.
-     * @param lowests list of numbers of times a given letter must appear for the password to be valid
-     * @param highests list of numbers of times a given letter must appear for the password to be valid
-     * @param letters list of given letters
-     * @param passwords list of passwords
+     *
+     * @param lowests  list of numbers of times a given letter must appear for the password to be valid
+     * @param highests  list of numbers of times a given letter must appear for the password to be valid
+     * @param letters  list of given letters
+     * @param passwords  list of passwords
      * @return number of valid passwords
      */
     public int countValidPasswords(List<Integer> lowests, List<Integer> highests,
@@ -40,8 +44,9 @@ public class Solution {
 
     /**
      * Counts the frequency of a required letter in a given string.
-     * @param str string
-     * @param letter to count frequency
+     *
+     * @param str  string
+     * @param letter  to count frequency
      * @return frequency of a required letter
      */
     private int countFrequency(String str, char letter){

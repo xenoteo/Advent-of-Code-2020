@@ -3,16 +3,20 @@ package xenoteo.com.github.day1.part2;
 import java.util.Arrays;
 
 /**
- * Finding the three entries that sum to x and then multiply those three numbers together.
+ * Class finding the three entries that sum to x and then multiplying those three numbers together.
  */
 public class Solution {
 
     /**
-     * Sorting an array and using three pointers. The first one is fixed (in the range [0, size - 2]),
+     * Finds the multiplication of three entries that sum to x.
+     *
+     * Sorts an array and uses three pointers. The first one is fixed (in the range [0, size - 2]),
      * the next two move until three numbers will sum to x.
+     *
      * Complexity is O(N^2).
-     * @param nums an input array
-     * @param x a desired sum
+     *
+     * @param nums  an input array
+     * @param x  a desired sum
      * @return multiplication of three numbers from an array that sum to x
      */
     public int multiplyRightTrinity(int[] nums, int x){
