@@ -3,7 +3,9 @@ package xenoteo.com.github.day5.part2;
 import java.util.List;
 
 /**
- * Decoding airplane pass. Instead of zones or groups, the airline uses binary space partitioning to seat people.
+ * Class decoding airplane pass.
+ *
+ * Instead of zones or groups, the airline uses binary space partitioning to seat people.
  * A seat might be specified like FBFBBFFRLR, where F means "front", B means "back", L means "left", and R means "right".
  *
  * The first 7 characters will either be F or B;
@@ -18,10 +20,12 @@ import java.util.List;
 public class Solution {
 
     /**
-     * Finding the only one free pass ID from given passes.
+     * Finds the only one free pass ID from given passes.
      * Pass ID = row * 8 + column.
+     *
      * Wanted pass ID is not at very front or back, that is the seats with IDs +1 and -1 from wanted will be in a list.
-     * @param passes passes to analyze
+     *
+     * @param passes  passes to analyze
      * @return the highest seat ID
      */
     public int findFreeSeatId(List<String> passes){
@@ -38,9 +42,10 @@ public class Solution {
     }
 
     /**
-     * Finding the row using given pass.
-     * @param pass the pass
-     * @return row of the pass
+     * Finds the row using given pass.
+     *
+     * @param pass  the pass
+     * @return the row of the pass
      */
     private int countRow(String pass){
         int lower = 0;
@@ -56,9 +61,10 @@ public class Solution {
     }
 
     /**
-     * Finding the column using given pass.
-     * @param pass the pass
-     * @return column of the pass
+     * Finds the column using given pass.
+     *
+     * @param pass  the pass
+     * @return the column of the pass
      */
     private int countColumn(String pass){
         int lower = 0;

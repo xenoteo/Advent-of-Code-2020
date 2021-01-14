@@ -1,6 +1,6 @@
 package xenoteo.com.github.day3.part2;
 
-import xenoteo.com.github.day3.InputReader;
+import xenoteo.com.github.InputReader;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -8,13 +8,14 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         String filePath = "../input/input.txt";
-        char[][] map = new InputReader().readMap(Main.class.getResource(filePath));
+        char[][] map = new InputReader().readInputFileTo2DCharArray(Main.class.getResource(filePath));
         List<List<Integer>> slopes = getDefaultSlopes();
         System.out.println(new Solution().multiplySlopes(map, slopes));
     }
 
     /**
-     * Generating default slopes according to requirements.
+     * Generates default slopes according to requirements.
+     *
      * @return list of default slopes
      */
     private static List<List<Integer>> getDefaultSlopes(){

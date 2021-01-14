@@ -5,10 +5,16 @@ import xenoteo.com.github.day4.Passport;
 import java.util.List;
 
 /**
- * Counting how many passports are valid.
+ * Class counting how many passports are valid.
  * Passport is valid when all eight fields are present or when the only missing field is cid.
  */
 public class Solution {
+    /**
+     * Counts the number of valid passports.
+     *
+     * @param passports  the list of passwords
+     * @return the number of valid passports
+     */
     public int countValidPassports(List<Passport> passports){
         int count = 0;
         for (Passport passport : passports){

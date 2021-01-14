@@ -1,7 +1,7 @@
 package xenoteo.com.github.day4;
 
 /**
- * Class representing password.
+ * Class representing passport.
  */
 public class Passport {
     /**
@@ -50,9 +50,10 @@ public class Passport {
     public int fieldsCount = 0;
 
     /**
-     * Filling new field in a password.
-     * @param fieldName string representing field's name
-     * @param fieldValue value of the field
+     * Fills the password with a new field.
+     *
+     * @param fieldName  string representing field's name
+     * @param fieldValue  value of the field
      */
     public void addField(String fieldName, String fieldValue){
         fieldsCount++;

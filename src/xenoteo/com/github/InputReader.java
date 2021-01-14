@@ -8,13 +8,14 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * Proceeding input file.
+ * Class proceeding input file.
  */
 public class InputReader {
 
     /**
      * Reads data from the input file with provided filename.
-     * @param path the path of the file
+     *
+     * @param path  the path of the file
      * @return data converted to integer array
      */
     public int[] readInputFileToIntArray(URL path){
@@ -25,7 +26,7 @@ public class InputReader {
                 input.add(Integer.valueOf(scanner.nextLine()));
             }
             scanner.close();
-            return this.listToIntArray(input);
+            return input.stream().mapToInt(Integer::intValue).toArray();    // converting list to array
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
@@ -35,7 +36,8 @@ public class InputReader {
 
     /**
      * Reads data from the input file with provided filename.
-     * @param path the path of the file
+     *
+     * @param path  the path of the file
      * @return data converted to long array
      */
     public long[] readInputFileToLongArray(URL path){
@@ -46,7 +48,7 @@ public class InputReader {
                 input.add(Long.valueOf(scanner.nextLine()));
             }
             scanner.close();
-            return listToLongArray(input);
+            return input.stream().mapToLong(Long::longValue).toArray(); // converting list to array
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
@@ -56,7 +58,8 @@ public class InputReader {
 
     /**
      * Reads data from the input file with provided filename.
-     * @param path the path of the file
+     *
+     * @param path  the path of the file
      * @return data converted to string list
      */
     public List<String> readInputFileToStringList(URL path){
@@ -77,7 +80,8 @@ public class InputReader {
 
     /**
      * Reads data from the input file with provided filename.
-     * @param path the path of the file
+     *
+     * @param path  the path of the file
      * @return data converted to 2D char array
      */
     public char[][] readInputFileTo2DCharArray(URL path){
@@ -85,34 +89,9 @@ public class InputReader {
     }
 
     /**
-     * Converts a list to an integer array.
-     * @param list to convert
-     * @return integer array
-     */
-    private int[] listToIntArray(List<Integer> list){
-        int[] arr = new int[list.size()];
-        for (int i = 0; i < arr.length; i++){
-            arr[i] = list.get(i);
-        }
-        return arr;
-    }
-
-    /**
-     * Converts a list to a long array.
-     * @param list to convert
-     * @return long array
-     */
-    private long[] listToLongArray(List<Long> list){
-        long[] arr = new long[list.size()];
-        for (int i = 0; i < arr.length; i++){
-            arr[i] = list.get(i);
-        }
-        return arr;
-    }
-
-    /**
      * Converts a list of strings to a 2D char array.
-     * @param list to convert
+     *
+     * @param list  to convert
      * @return 2D char array
      */
     private char[][] stringListTo2DCharArray(List<String> list){
