@@ -15,15 +15,15 @@ import java.util.Scanner;
  *
  * Input example:
  * <pre>
- * eyr:2029 iyr:2013
- * hcl:#ceb3a1 byr:1939 ecl:blu
- * hgt:163cm
- * pid:660456119
+ *     eyr:2029 iyr:2013
+ *     hcl:#ceb3a1 byr:1939 ecl:blu
+ *     hgt:163cm
+ *     pid:660456119
  *
- * hcl:#0f8b2e ecl:grn
- * byr:1975 iyr:2011
- * eyr:2028 cid:207 hgt:158cm
- * pid:755567813
+ *     hcl:#0f8b2e ecl:grn
+ *     byr:1975 iyr:2011
+ *     eyr:2028 cid:207 hgt:158cm
+ *     pid:755567813
  * </pre>
  */
 public class InputReader {

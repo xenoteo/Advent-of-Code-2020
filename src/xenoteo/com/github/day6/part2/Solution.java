@@ -7,18 +7,22 @@ import java.util.List;
  * Identifying the questions for which everyone in a group answers "yes".
  *
  * For each of the people in the group, writing down the questions for which they answer "yes", one per line. For example:
- *  abcx
- *  abcy
- *  abcz
+ * <pre>
+ *     abcx
+ *     abcy
+ *     abcz
+ * </pre>
  * In this group, there are 3 questions to which everyone answered "yes": a, b and c.
  */
 public class Solution {
 
     /**
-     * Finding a sum of group's counts of questions for which everyone in a group answered "yes".
+     * Finds a sum of group's counts of questions for which everyone in a group answered "yes".
+     *
      * Complexity is O(G * P), where N is a number of groups and P is a number of people in the groups.
-     * @param groups list of groups, representing list of sequences of questions for which people from the group answered "yes"
-     * @return sum of group's counts of questions for which anyone in a group answered "yes"
+     *
+     * @param groups  the list of groups, representing list of sequences of questions for which people from the group answered "yes"
+     * @return the sum of group's counts of questions for which anyone in a group answered "yes"
      */
     public int sumOfGroupCounts(List<List<String>> groups){
         int generalCount = 0;
@@ -30,7 +34,8 @@ public class Solution {
 
     /**
      * Counts frequencies of "yes" answers for each of the questions.
-     * @param group list of sequences of questions for which people from the group answered "yes"
+     *
+     * @param group  the list of sequences of questions for which people from the group answered "yes"
      * @return frequencies of "yes" answers
      */
     private int[] countFrequencies(List<String> group){
@@ -44,10 +49,10 @@ public class Solution {
     }
 
     /**
-     * Counts questions for which everyone in a group answered "yes".
-     * @param group list of sequences of questions for which people from the group answered "yes"
-     * @param frequencies frequencies of "yes" answers for each of the questions
-     * @return count of questions for which anyone in a group answered "yes"
+     * Counts the number of questions for which everyone in a group answered "yes".
+     * @param group  the list of sequences of questions for which people from the group answered "yes"
+     * @param frequencies  the frequencies of "yes" answers for each of the questions
+     * @return the number of questions for which anyone in a group answered "yes"
      */
     private int countQuestions(List<String> group, int[] frequencies){
         int groupSize = group.size();

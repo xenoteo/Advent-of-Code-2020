@@ -8,14 +8,15 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * Proceeding input file.
+ * Class proceeding input file.
  */
 public class InputReader {
 
     /**
      * Reads data from the input file with provided filename,
      * converts groups divided by a blank line to list of string lists.
-     * @param path the path of the file
+     *
+     * @param path  the path of the file
      * @return data converted to list of string lists
      */
     public List<List<String>> readInputFile(URL path){

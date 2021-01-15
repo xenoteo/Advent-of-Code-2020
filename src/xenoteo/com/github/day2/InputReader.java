@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * Proceeding input file containing passwords with their password policies and converting them to lists.
+ * Class proceeding input file containing passwords with their password policies and converting them to lists.
  */
 public class InputReader {
     /**

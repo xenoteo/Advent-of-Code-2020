@@ -7,11 +7,13 @@ import java.util.List;
  * the same pattern repeats to the right many times.
  * Starting in the top-left corner need to reach the bottom (below the bottom-most row on your map)
  * following slopes:
- *  - right 1, down 1
- *  - right 3, down 1
- *  - right 5, down 1
- *  - right 7, down 1
- *  - right 1, down 2
+ * <ul>
+ *     <li>right 1, down 1</li>
+ *     <li>right 3, down 1</li>
+ *     <li>right 5, down 1</li>
+ *     <li>right 7, down 1</li>
+ *     <li>right 1, down 2</li>
+ * </ul>
  *
  * Class counting how many trees can be encountered starting at the top-left corner of the map and following given slopes,
  * and then multiplying founded results together.

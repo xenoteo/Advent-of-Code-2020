@@ -6,8 +6,8 @@ import java.net.URL;
 import java.util.*;
 
 /**
- * Proceeding input file, reading bag colors rules
- * and traversing them to a hashmap from color to list of another colors than can be contained by key-color.
+ * Class proceeding input file, reading bag colors rules and traversing them to a hashmap
+ * from color to list of another colors than can be contained by key-color.
  */
 public class InputReader {
 
@@ -15,16 +15,20 @@ public class InputReader {
      * Reads input file and traverses color rules to a hash map.
      *
      * For example the following input:
-     *  "vibrant beige bags contain 2 posh silver bags.
-     *  bright bronze bags contain 1 shiny yellow bag, 5 muted green bags, 3 dark gray bags.
-     *  bright orange bags contain no other bags."
+     * <pre>
+     *     vibrant beige bags contain 2 posh silver bags.
+     *     bright bronze bags contain 1 shiny yellow bag, 5 muted green bags, 3 dark gray bags.
+     *     bright orange bags contain no other bags.
+     * </pre>
      * is converted to the following map:
-     *  vibrant beige -> [posh silver]
-     *  bright bronze -> [shiny yellow, muted green, dark gray]
-     *  bright orange -> []
+     * <pre>
+     *     vibrant beige -> [posh silver]
+     *     bright bronze -> [shiny yellow, muted green, dark gray]
+     *     bright orange -> []
+     * </pre>
      *
-     * @param path the path of the file
-     * @return hash map representing bag color rules
+     * @param path  the path of the file
+     * @return the hash map representing bag color rules
      */
     public Map<String, List<String>> readInputFileIntoRuleMap(URL path){
         try {
@@ -48,8 +52,9 @@ public class InputReader {
     }
 
     /**
-     * Gets list of colors from the second part of one rule string (the part after words " bags contain ").
-     * @param line the second part of one rule string
+     * Gets the list of colors from the second part of one rule string (the part after words " bags contain ").
+     *
+     * @param line  the second part of one rule string
      * @return "clear" list of colors
      */
     private List<String> getColorsFromString(String line){
@@ -67,9 +72,10 @@ public class InputReader {
     /**
      * Updates color dependencies.
      * If key-color is already present in a map, new colors are added, otherwise new entry is created.
-     * @param rules map of rules
-     * @param keyColor key color
-     * @param colors colors to be added to a key color
+     *
+     * @param rules  the map of rules
+     * @param keyColor  the key color
+     * @param colors  colors to be added to a key color
      */
     private void addColorDependencies(Map<String, List<String>> rules, String keyColor, List<String> colors){
         if (rules.containsKey(keyColor))
@@ -82,16 +88,20 @@ public class InputReader {
      * Reads input file and traverses color rules to a hash map (with number of bags).
      *
      * For example the following input:
-     *  "vibrant beige bags contain 2 posh silver bags.
-     *  bright bronze bags contain 1 shiny yellow bag, 5 muted green bags, 3 dark gray bags.
-     *  bright orange bags contain no other bags."
+     * <pre>
+     *     vibrant beige bags contain 2 posh silver bags.
+     *     bright bronze bags contain 1 shiny yellow bag, 5 muted green bags, 3 dark gray bags.
+     *     bright orange bags contain no other bags.
+     * </pre>
      * is converted to the following map:
-     *  vibrant beige -> [posh silver -> 2]
-     *  bright bronze -> [shiny yellow -> 1, muted green -> 5, dark gray -> 3]
-     *  bright orange -> []
+     * <pre>
+     *     vibrant beige -> [posh silver -> 2]
+     *     bright bronze -> [shiny yellow -> 1, muted green -> 5, dark gray -> 3]
+     *     bright orange -> []
+     * </pre>
      *
-     * @param path the path of the file
-     * @return hash map representing bag color rules
+     * @param path  the path of the file
+     * @return the hash map representing bag color rules
      */
     public Map<String, HashMap<String, Integer>> readInputFileIntoRuleMapWithNumbers(URL path){
         try {
@@ -115,10 +125,10 @@ public class InputReader {
     }
 
     /**
-     * Gets map of colors (with number of occurrences) from the second part of one rule string
+     * Gets the map of colors (with number of occurrences) from the second part of one rule string
      * (the part after words " bags contain ").
-     * @param line the second part of one rule string
-     * @return map of colors with number of their occurrences
+     * @param line  the second part of one rule string
+     * @return the map of colors with number of their occurrences
      */
     private HashMap<String, Integer> getColorsWithNumbersFromString(String line){
         HashMap<String, Integer> colors = new HashMap<>();
@@ -136,9 +146,10 @@ public class InputReader {
     /**
      * Updates color dependencies.
      * If key-color is already present in a map, new colors are added, otherwise new entry is created.
-     * @param rules map of rules
-     * @param keyColor key color
-     * @param colors colors to be added to a key color
+     *
+     * @param rules  the map of rules
+     * @param keyColor  the key color
+     * @param colors  colors to be added to a key color
      */
     private void addColorDependencies(Map<String, HashMap<String, Integer>> rules,
                                       String keyColor,
