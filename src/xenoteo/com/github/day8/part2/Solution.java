@@ -10,23 +10,26 @@ import java.util.Set;
 /**
  * The boot code is represented as a text file with one instruction per line of text.
  * Each instruction consists of an operation (acc, jmp, or nop) and an argument (a signed number like +4 or -20).
- *  acc increases or decreases a single global value called the accumulator by the value given in the argument.
- *  jmp jumps to a new instruction relative to itself.
- *  nop stands for No OPeration - it does nothing. The instruction immediately below it is executed next.
+ * <ul>
+ *     <li>acc increases or decreases a single global value called the accumulator by the value given in the argument.</li>
+ *     <li>jmp jumps to a new instruction relative to itself.</li>
+ *     <li>nop stands for No OPeration - it does nothing. The instruction immediately below it is executed next.</li>
+ * </ul>
  *
  * Program contains infinite loop.
  * The program is supposed to terminate by attempting to execute an instruction immediately
  * after the last instruction in the file. By changing exactly one jmp or nop, the boot code can be repaired.
  *
- * Fixing a program and finding what the value of the accumulator is after the program terminates.
+ * Class fixing a program and finding what the value of the accumulator is after the program terminates.
  */
 public class Solution {
 
     /**
-     * Fixing a program and finding what the value of the accumulator is after the program terminates.
-     * @param instructions instructions
-     * @param arguments arguments
-     * @return value of the accumulator is after the program terminates
+     * Fixes a program and finds what the value of the accumulator is after the program terminates.
+     *
+     * @param instructions  the list of instructions
+     * @param arguments  the list arguments
+     * @return the value of the accumulator is after the program terminates
      */
     public int lastValueBeforeTermination(List<Instructions> instructions, List<Integer> arguments){
         fixProgram(instructions, arguments);
@@ -48,8 +51,9 @@ public class Solution {
 
     /**
      * Fixes a program trying to change every nop and jmp operation until program does not contain a loop.
-     * @param instructions instructions
-     * @param arguments arguments
+     *
+     * @param instructions  the list of instructions
+     * @param arguments  the list arguments
      */
     private void fixProgram(List<Instructions> instructions, List<Integer> arguments){
         int op = 0;
@@ -75,9 +79,10 @@ public class Solution {
 
     /**
      * Checks whether program contains a loop.
-     * @param instructions instructions
-     * @param arguments arguments
-     * @param op index of operation to start from
+     *
+     * @param instructions  the list of instructions
+     * @param arguments  the list arguments
+     * @param op  an index of operation to start from
      * @return whether program contains a loop
      */
     private boolean loops(List<Instructions> instructions, List<Integer> arguments, int op){

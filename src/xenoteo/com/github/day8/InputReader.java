@@ -8,24 +8,27 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * Proceeding input file.
+ * Class proceeding input file.
  *
  * Input example:
- *  "acc +3
- *  acc +25
- *  acc +11
- *  nop +56
- *  jmp +110
- *  jmp +479".
+ * <pre>
+ *     acc +3
+ *     acc +25
+ *     acc +11
+ *     nop +56
+ *     jmp +110
+ *     jmp +479
+ * </pre>
  */
 public class InputReader {
     private List<Instructions> instructions;
     private List<Integer> arguments;
 
     /**
-     * Reads data from the input file with provided filename.
-     * Writes instructions to a list of instructions and arguments to a list of arguments.
-     * @param path the path of the file
+     * Reads data from the input file with provided filename and
+     * writes instructions to a list of instructions and arguments to a list of arguments.
+     *
+     * @param path  the path of the file
      */
     public void readInputFile(URL path) {
         instructions = new ArrayList<>();
@@ -48,7 +51,8 @@ public class InputReader {
 
     /**
      * Gets a list of instructions.
-     * @return instruction list
+     *
+     * @return the instruction list
      */
     public List<Instructions> getInstructions() {
         return instructions;
@@ -56,7 +60,8 @@ public class InputReader {
 
     /**
      * Gets a list of arguments.
-     * @return argument list
+     *
+     * @return the argument list
      */
     public List<Integer> getArguments() {
         return arguments;

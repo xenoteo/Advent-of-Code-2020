@@ -10,33 +10,37 @@ import java.util.Map;
  *
  * Encryption weakness is a sum of the smallest and largest number in a contiguous set
  * of at least two numbers in a list which sum to the invalid number.
+ *
+ * Class finding the encryption weakness.
  */
 public class Solution {
     /**
-     * Right (the last) index of the 25 immediately previous numbers before the first invalid number
+     * Right (the last) index of the 25 immediately previous numbers before the first invalid number.
      */
     private int invalidRight;
 
     /**
-     * First invalid number
+     * First invalid number.
      */
     private long invalidNumber;
 
     /**
-     * Left (the first) index of a contiguous set of at least two numbers in the list which sum to the invalid number
+     * Left (the first) index of a contiguous set of at least two numbers in the list which sum to the invalid number.
      */
     private int leftOfSet;
 
     /**
-     * Right (the last) index of a contiguous set of at least two numbers in the list which sum to the invalid number
+     * Right (the last) index of a contiguous set of at least two numbers in the list which sum to the invalid number.
      */
     private int rightOfSet;
 
     /**
      * Finds encryption weakness, that is a sum of the smallest and largest number in a contiguous set
      * of at least two numbers in a list which sum to the invalid number.
+     *
      * Complexity is O(N).
-     * @param arr an input array
+     *
+     * @param arr  an input array
      * @return the encryption weakness
      */
     public long encryptionWeakness(long[] arr){
@@ -49,8 +53,10 @@ public class Solution {
      * Sets up the first invalid number
      * (that is number that cannot be made by sum of any two of the 25 immediately previous numbers),
      * as well as sets up the last index of the 25 immediately previous numbers before the first invalid number.
+     *
      * Complexity is O(25^2 * N).
-     * @param arr array of numbers
+     *
+     * @param arr  an array of numbers
      */
     private void setUpFirstInvalidNumber(long[] arr){
         int left = 0;
@@ -71,11 +77,13 @@ public class Solution {
     /**
      * Checks whether provided number is valid,
      * that is whether it can be made by sum of any two of the 25 previous numbers.
+     *
      * Complexity is O((right - left)^2).
-     * @param arr arrays of numbers
-     * @param left index of the first of 25 numbers
-     * @param right index if the last of 25 numbers
-     * @param num number to check
+     *
+     * @param arr  an arrays of numbers
+     * @param left  an index of the first of 25 numbers
+     * @param right  an index if the last of 25 numbers
+     * @param num  a number to check
      * @return whether number is valid
      */
     private boolean isValid(long[] arr, int left, int right, long num) {
@@ -89,9 +97,10 @@ public class Solution {
     }
 
     /**
-     * Starting from 0 and ending at provided index creates a map of sums at the certain moment (index).
-     * @param arr an array of numbers
-     * @param right an index to stop (inclusive)
+     * Creates a map of sums at the certain moment (index) starting from 0 and ending at provided index.
+     *
+     * @param arr  an array of numbers
+     * @param right  an index to stop (inclusive)
      * @return a map of sums at indexes
      */
     private HashMap<Integer, Long> makeSumMap(long[] arr, int right){
@@ -106,9 +115,11 @@ public class Solution {
 
     /**
      * Sets up a contiguous set of at least two numbers in the list which sum to the invalid number.
+     *
      * Complexity is O(N).
-     * @param map a map of sums
-     * @param invalid an invalid number
+     *
+     * @param map  a map of sums
+     * @param invalid  an invalid number
      */
     private void setUpContiguousSet(HashMap<Integer, Long> map, long invalid){
         for (Map.Entry<Integer, Long> pair : map.entrySet()){
@@ -122,8 +133,9 @@ public class Solution {
 
     /**
      * Gets key by value in a hash map.
-     * @param map a map
-     * @param value a value
+     *
+     * @param map  a map
+     * @param value  a value
      * @return the key by value
      */
     private int getKey(HashMap<Integer, Long> map, long value){
@@ -136,9 +148,10 @@ public class Solution {
 
     /**
      * Finds maximum value in a given range.
-     * @param arr an array of numbers
-     * @param left the first index of a range to analyze
-     * @param right the last index of a range to analyze
+     *
+     * @param arr  an array of numbers
+     * @param left  the first index of a range to analyze
+     * @param right  the last index of a range to analyze
      * @return the max value
      */
     private long max(long[] arr, int left, int right){
@@ -151,9 +164,10 @@ public class Solution {
 
     /**
      * Finds minimum value in a given range.
-     * @param arr an array of numbers
-     * @param left the first index of a range to analyze
-     * @param right the last index of a range to analyze
+     *
+     * @param arr  an array of numbers
+     * @param left  the first index of a range to analyze
+     * @param right  the last index of a range to analyze
      * @return the min value
      */
     private long min(long[] arr, int left, int right){
