@@ -10,14 +10,15 @@ import java.util.Arrays;
  *
  * The charging outlet has an effective joltage rating of 0.
  *
- * If using every adapter in the bag at once, what is the distribution of joltage differences between the charging
- * outlet, the adapters, and a device?
+ * Class finding the distribution of joltage differences between the charging outlet, the adapters, and a device,
+ * if using every adapter in the bag at once.
  */
 public class Solution {
 
     /**
      * Finds the number of 1-jolt differences multiplied by the number of 3-jolt differences.
-     * @param arr an input array representing given adapters
+     *
+     * @param arr  an input array representing given adapters
      * @return the number of 1-jolt differences multiplied by the number of 3-jolt differences
      */
     public int multiplicationOf1JoltDiffAnd3JoltDiff(int[] arr){

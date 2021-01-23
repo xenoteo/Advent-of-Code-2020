@@ -5,13 +5,16 @@ package xenoteo.com.github.day11.part1;
  * Running seats rearrangements according to required rules. All decisions are based on the number of occupied seats
  * adjacent to a given seat (one of the eight positions immediately up, down, left, right, or diagonal from the seat).
  * The following rules are applied to every seat simultaneously:
- *  - If a seat is empty (L) and there are no occupied seats adjacent to it, the seat becomes occupied.
- *  - If a seat is occupied (#) and four or more seats adjacent to it are also occupied, the seat becomes empty.
- *  - Otherwise, the seat's state does not change.
+ * <ul>
+ *     <li>If a seat is empty (L) and there are no occupied seats adjacent to it, the seat becomes occupied.</li>
+ *     <li>If a seat is occupied (#) and four or more seats adjacent to it are also occupied, the seat becomes empty.</li>
+ *     <li>Otherwise, the seat's state does not change.</li>
+ * </ul>
  * Floor (.) never changes; seats don't move, and nobody sits on the floor.
  *
  * At some point the chaos stabilizes and further applications of these rules cause no seats to change state.
- * Simulating the seating area by applying the seating rules repeatedly until no seats change state.
+ *
+ * Class simulating the seating area by applying the seating rules repeatedly until no seats change state.
  */
 public class Solution {
     private static final char OCCUPIED = '#';
@@ -22,7 +25,8 @@ public class Solution {
     /**
      * Counts how many seats end up occupied at the point
      * when further applications of the rules cause no seats to change state.
-     * @param layout the layout
+     *
+     * @param layout  the layout
      * @return how many seats end up occupied
      */
     public int occupiedSeatsNumber(char[][] layout){
@@ -36,7 +40,8 @@ public class Solution {
 
     /**
      * Runs one rearrangements round according to required rules.
-     * @return number of changes launched during a round
+     *
+     * @return the number of changes launched during a round
      */
     private int runOneRearrangementRound(){
         int changes = 0;
@@ -74,7 +79,8 @@ public class Solution {
 
     /**
      * Counts all the occupied seats in the layout.
-     * @param layout the layout
+     *
+     * @param layout  the layout
      * @return the number of occupied seats
      */
     private int countAllOccupied(char[][] layout){
@@ -90,7 +96,8 @@ public class Solution {
 
     /**
      * Creates a copy of the layout.
-     * @param layout the layout to copy
+     *
+     * @param layout  the layout to copy
      * @return a copy of the layout
      */
     private char[][] copyLayout(char[][] layout){
@@ -103,9 +110,10 @@ public class Solution {
 
     /**
      * Counts the number of occupied adjacent seats for the given position.
-     * @param layout the layout
-     * @param i a row index
-     * @param j a column index
+     *
+     * @param layout  the layout
+     * @param i  a row index
+     * @param j  a column index
      * @return the number of occupied adjacent seats
      */
     private int countOccupiedAdjacentSeats(char[][] layout, int i, int j){

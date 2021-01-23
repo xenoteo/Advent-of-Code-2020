@@ -10,12 +10,15 @@ import java.util.HashMap;
  * adapter rated for 3 jolts higher than the highest-rated adapter in the bag.
  *
  * The charging outlet has an effective joltage rating of 0.
+ *
+ * Class counting the total number of distinct ways of adapter arrangements.
  */
 public class Solution {
 
     /**
      * Counts the total number of distinct ways of adapter arrangements.
-     * @param arr an input array representing given adapters
+     *
+     * @param arr  an input array representing given adapters
      * @return the total number of distinct ways of adapter arrangements
      */
     public long numberOfAdapterArrangements(int[] arr){
@@ -27,7 +30,8 @@ public class Solution {
     /**
      * Adds to the sorted array of adapters two adapters: the first one rated by 0 and
      * the second one rated for 3 jolts higher than the highest-rated adapter in the bag.
-     * @param sorted the sorted input array representing given adapters
+     *
+     * @param sorted  the sorted input array representing given adapters
      * @return expanded array of adapters
      */
     private int[] expandAdaptersArray(int[] sorted){
@@ -40,11 +44,12 @@ public class Solution {
     }
 
     /**
-     * Counts number of distinct ways of adapter arrangements for a given index(using dynamic programming).
-     * @param arr an array representing all sorted adapters
-     * @param i an index to analyze
-     * @param map a memorizing map (used for dynamic programming)
-     * @return number of distinct ways of adapter arrangements for a given index
+     * Counts the number of distinct ways of adapter arrangements for a given index (using dynamic programming).
+     *
+     * @param arr  an array representing all sorted adapters
+     * @param i  an index to analyze
+     * @param map  a memorizing map (used for dynamic programming)
+     * @return the number of distinct ways of adapter arrangements for a given index
      */
     private long countArrangements(int[] arr, int i, HashMap<Integer, Long> map){
         if (i == arr.length - 1) return 1;

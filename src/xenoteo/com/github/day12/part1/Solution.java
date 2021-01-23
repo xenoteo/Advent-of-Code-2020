@@ -6,16 +6,19 @@ import java.util.List;
 
 /**
  * The navigation instructions consists of a sequence of single-character actions paired with integer input values.
- *     Action N means to move north by the given value.
- *     Action S means to move south by the given value.
- *     Action E means to move east by the given value.
- *     Action W means to move west by the given value.
- *     Action L means to turn left the given number of degrees.
- *     Action R means to turn right the given number of degrees.
- *     Action F means to move forward by the given value in the direction the ship is currently facing.
+ * <ul>
+ *     <li>Action N means to move north by the given value.</li>
+ *     <li>Action S means to move south by the given value.</li>
+ *     <li>Action E means to move east by the given value.</li>
+ *     <li>Action W means to move west by the given value.</li>
+ *     <li>Action L means to turn left the given number of degrees.</li>
+ *     <li>Action R means to turn right the given number of degrees.</li>
+ *     <li>Action F means to move forward by the given value in the direction the ship is currently facing.</li>
+ * </ul>
  *
  * The ship starts by facing east. Only the L and R actions change the direction the ship is facing.
- * Finding the Manhattan distance (sum of the absolute values of its east/west position and its north/south position)
+ *
+ * Class finding the Manhattan distance (sum of the absolute values of its east/west position and its north/south position)
  * between the final location (when all the actions proceeded) and the ship's starting position.
  */
 public class Solution {
@@ -23,8 +26,9 @@ public class Solution {
     /**
      * Moves a ship according to provided actions and finds the Manhattan distance between the final location
      * and the ship's starting position.
-     * @param actions actions to perform on a ship
-     * @param values values for the actions
+     *
+     * @param actions  the list of actions to perform on a ship
+     * @param values  the list of values for the actions
      * @return the Manhattan distance between the final location and the ship's starting position
      */
     public int manhattanDistance(List<Actions> actions, List<Integer> values){

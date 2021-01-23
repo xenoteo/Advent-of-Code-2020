@@ -1,5 +1,8 @@
 package xenoteo.com.github.day12;
 
+/**
+ * Enum for navigation instructions.
+ */
 public enum Actions {
     NORTH("N"),
     SOUTH("S"),
@@ -15,9 +18,15 @@ public enum Actions {
         this.value = value;
     }
 
-    public static Actions actionFromString(String act){
+    /**
+     * Gets an Action from given string.
+     *
+     * @param actionString  an action string
+     * @return the action
+     */
+    public static Actions actionFromString(String actionString){
         for (Actions action : Actions.values()) {
-            if (action.value.equals(act))
+            if (action.value.equals(actionString))
                 return action;
         }
         return null;

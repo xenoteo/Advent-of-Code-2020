@@ -8,14 +8,16 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * Proceeding input file.
+ * Class proceeding input file.
  *
  * Input example:
- * "F10
- * N3
- * F7
- * R90
- * F11".
+ * <pre>
+ *     F10
+ *     N3
+ *     F7
+ *     R90
+ *     F11
+ * </pre>
  */
 public class InputReader {
     private List<Actions> actions;
@@ -24,7 +26,8 @@ public class InputReader {
     /**
      * Reads data from the input file with provided filename.
      * Writes actions to a list of actions and arguments to a list of values.
-     * @param path the path of the file
+     *
+     * @param path  the path of the file
      */
     public void readInputFile(URL path) {
         actions = new ArrayList<>();
@@ -47,6 +50,7 @@ public class InputReader {
 
     /**
      * Gets a list of actions.
+     *
      * @return a list of actions
      */
     public List<Actions> getActions() {
@@ -55,6 +59,7 @@ public class InputReader {
 
     /**
      * Gets a list of values.
+     *
      * @return a list of values
      */
     public List<Integer> getValues() {
