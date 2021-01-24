@@ -11,15 +11,16 @@ import java.util.Map;
  * written to memory: a 0 or 1 overwrites the corresponding bit in the value, while an X leaves the bit in the
  * value unchanged. The initialization program  can either update the bitmask or write a value to memory.
  *
- * Finding the sum of all values left in memory after the initialization program completes.
+ * Class finding the sum of all values left in memory after the initialization program completes.
  */
 public class Solution {
 
     /**
      * Finds the sum of all values left in memory after the initialization program completes.
-     * @param masks list of all the masks
-     * @param assignments list of the parts of memory assignments
      * Mask i corresponds to the part of assignments at the index i.
+     *
+     * @param masks  list of all the masks
+     * @param assignments  list of the parts of memory assignments
      * @return the sum of all values left in memory after the initialization program completes
      */
     public long sumOfAllValuesInMemory(List<String> masks, List<LinkedHashMap<Integer, Integer>> assignments){
@@ -29,9 +30,10 @@ public class Solution {
 
     /**
      * Fills the memory with provided values to assign changing them using provided masks.
-     * @param masks masks used for numbers encoding
-     * @param assignments values and positions where to assign them
-     * @return filled memory
+     *
+     * @param masks  masks used for numbers encoding
+     * @param assignments  values and positions where to assign them
+     * @return the filled memory
      */
     private HashMap<Integer, Long> fillMemory(List<String> masks, List<LinkedHashMap<Integer, Integer>> assignments){
         HashMap<Integer, Long> memory = new HashMap<>();
@@ -56,8 +58,9 @@ public class Solution {
 
     /**
      * Finds the sum of all the values in the memory.
-     * @param memory map of the memory (position -> value)
-     * @return sum of all the values in the memory
+     *
+     * @param memory  map of the memory (position -> value)
+     * @return the sum of all the values in the memory
      */
     private long findMemorySum(HashMap<Integer, Long> memory){
         long sum = 0;

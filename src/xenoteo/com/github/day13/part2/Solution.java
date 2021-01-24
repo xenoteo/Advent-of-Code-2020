@@ -15,7 +15,7 @@ import java.util.Map;
  *
  * To save time, the goal is to figure out the earliest bus you can take to the airport.
  *
- * Finding the earliest timestamp such that all of the listed bus IDs depart at offsets matching their positions
+ * Class finding the earliest timestamp such that all of the listed bus IDs depart at offsets matching their positions
  * in the list.
  */
 public class Solution {
@@ -23,9 +23,10 @@ public class Solution {
     /**
      * Finds the earliest timestamp such that all of the listed bus IDs depart at offsets matching their positions
      * in the list.
-     * @param buses the bus IDs (with their positions)
+     *
+     * @param buses  the bus IDs (with their positions)
      * @return the earliest timestamp such that all of the listed bus IDs depart at offsets matching their positions
-     * in the list.
+     * in the list
      */
     public long findEarliestTimestamp(HashMap<Integer, Integer> buses){
         long timestamp = 0;

@@ -8,25 +8,28 @@ import java.util.*;
  *
  * A bitmask act as a memory address decoder. Immediately before a value is written to memory, each bit in the bitmask
  * modifies the corresponding bit of the destination memory address in the following way:
- *     If the bitmask bit is 0, the corresponding memory address bit is unchanged.
- *     If the bitmask bit is 1, the corresponding memory address bit is overwritten with 1.
- *     If the bitmask bit is X, the corresponding memory address bit is floating.
+ * <ul>
+ *     <li>If the bitmask bit is 0, the corresponding memory address bit is unchanged.</li>
+ *     <li>If the bitmask bit is 1, the corresponding memory address bit is overwritten with 1.</li>
+ *     <li> If the bitmask bit is X, the corresponding memory address bit is floating.</li>
+ * </ul>
  *
  * A floating bit is not connected to anything and instead fluctuates unpredictably. In practice, this means the
  * floating bits will take on all possible values, potentially causing many memory addresses to be written all at once.
  *
  * The initialization program can either update the bitmask or write a value to memory.
  *
- * Finding the sum of all values left in memory after the initialization program completes.
+ * Class finding the sum of all values left in memory after the initialization program completes.
  */
 public class Solution {
     private static final int MASK_LENGTH = 36;
 
     /**
      * Finds the sum of all values left in memory after the initialization program completes.
-     * @param masks list of all the masks
-     * @param assignments list of the parts of memory assignments
      * Mask i corresponds to the part of assignments at the index i.
+     *
+     * @param masks  the list of all the masks
+     * @param assignments  the list of the parts of memory assignments
      * @return the sum of all values left in memory after the initialization program completes
      */
     public long sumOfAllValuesInMemory(List<String> masks, List<LinkedHashMap<Integer, Integer>> assignments){
@@ -36,9 +39,10 @@ public class Solution {
 
     /**
      * Fills the memory with provided values to assign changing their addresses using provided masks.
-     * @param masks masks used for address encoding
-     * @param assignments values and positions where to assign them
-     * @return filled memory
+     *
+     * @param masks  the list of masks used for address encoding
+     * @param assignments  the map from values to positions where to assign them
+     * @return the filled memory
      */
     private HashMap<String, Integer> fillMemory(List<String> masks, List<LinkedHashMap<Integer, Integer>> assignments){
         HashMap<String, Integer> memory = new HashMap<>();
@@ -56,7 +60,8 @@ public class Solution {
 
     /**
      * Creates a StringBuilder representing provided number in 36 bits.
-     * @param number the number
+     *
+     * @param number  the number
      * @return a StringBuilder representing provided number in 36 bits
      */
     private StringBuilder create36bitsBinaryRepresentation(int number){
@@ -66,8 +71,9 @@ public class Solution {
 
     /**
      * Encodes provided number using provided mask.
-     * @param numberBuilder the binary number represented by StringBuilder
-     * @param mask the binary mask represented by String
+     *
+     * @param numberBuilder  the binary number represented by StringBuilder
+     * @param mask  the binary mask represented by String
      */
     private void encodeNumberUsingMask(StringBuilder numberBuilder, String mask){
         for (int k = 0; k < MASK_LENGTH; k++){
@@ -80,7 +86,8 @@ public class Solution {
 
     /**
      * Creates all possible addresses using an address with floating bits.
-     * @param addressBuilder an address with floating bits.
+     *
+     * @param addressBuilder  an address with floating bits.
      * @return all possible addresses
      */
     private Set<String> createAllPossibleAddresses(StringBuilder addressBuilder){
@@ -91,9 +98,10 @@ public class Solution {
 
     /**
      * Puts a given value to given addresses of memory.
-     * @param memory the memory
-     * @param addresses addresses
-     * @param value the value
+     *
+     * @param memory  the memory
+     * @param addresses  the set of addresses
+     * @param value  the value
      */
     private void putValueToAddresses(HashMap<String, Integer> memory, Set<String> addresses, int value){
         for (String address : addresses){
@@ -103,9 +111,10 @@ public class Solution {
 
     /**
      * Fills the set of all possible addresses using an address with floating bits.
-     * @param addresses a set of all possible addresses
-     * @param addressBuilder an address with floating bits
-     * @param i an index of current bit
+     *
+     * @param addresses  a set of all possible addresses
+     * @param addressBuilder  an address with floating bits
+     * @param i  an index of current bit
      */
     private void fillAddresses(Set<String> addresses, StringBuilder addressBuilder, int i){
         if (i >= addressBuilder.length()){
@@ -125,7 +134,8 @@ public class Solution {
 
     /**
      * Finds the sum of all the values in the memory.
-     * @param memory map of the memory (position -> value)
+     *
+     * @param memory  map of the memory (position -> value)
      * @return sum of all the values in the memory
      */
     private long findMemorySum(HashMap<String, Integer> memory){

@@ -14,7 +14,7 @@ import java.util.List;
  *
  * To save time, the goal is to figure out the earliest bus you can take to the airport.
  *
- * Finding the ID of the earliest bus you can take to the airport multiplied by the number of minutes
+ * Class finding the ID of the earliest bus you can take to the airport multiplied by the number of minutes
  * you'll need to wait for that bus.
  */
 public class Solution {
@@ -22,8 +22,9 @@ public class Solution {
     /**
      * Finds the ID of the earliest bus you can take to the airport multiplied by the number of minutes
      * you'll need to wait for that bus.
-     * @param timestamp the earliest timestamp you could depart on a bus
-     * @param buses the bus IDs
+     *
+     * @param timestamp  the earliest timestamp you could depart on a bus
+     * @param buses  the bus IDs
      * @return the ID of the earliest bus you can take to the airport multiplied by the number of minutes
      * you'll need to wait for that bus
      */

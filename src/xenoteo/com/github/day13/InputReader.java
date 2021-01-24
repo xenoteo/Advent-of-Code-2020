@@ -9,11 +9,13 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * Proceeding input file.
+ * Class proceeding input file.
  *
  * Input example:
- * "939
- * 7,13,x,x,59,x,31,19".
+ * <pre>
+ *     939
+ *     7,13,x,x,59,x,31,19
+ * </pre>
  *
  * The first line is the earliest timestamp you could depart on a bus.
  * The second line lists the bus IDs that are in service according to the shuttle company.
@@ -22,7 +24,8 @@ public class InputReader {
 
     /**
      * Reads the timestamp from the input file.
-     * @param path the path of the file
+     *
+     * @param path  the path of the file
      * @return the timestamp
      */
     public int readTimestampFromInputFile(URL path){
@@ -42,7 +45,8 @@ public class InputReader {
     /**
      * Entries that show x must be out of service, so you decide to ignore them.
      * Reads the buses IDs (without out of service ones) to an integer list from the input file.
-     * @param path the path of the file
+     *
+     * @param path  the path of the file
      * @return a list of buses IDs
      */
     public List<Integer> readInputFileToBusIdList(URL path){
@@ -68,7 +72,8 @@ public class InputReader {
 
     /**
      * Reads the buses IDs to a map (with their position in the list) from the input file.
-     * @param path the path of the file
+     *
+     * @param path  the path of the file
      * @return buses IDs with their positions in the list
      */
     public HashMap<Integer, Integer> readInputFileToBusIdMap(URL path){
