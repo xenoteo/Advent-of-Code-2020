@@ -12,14 +12,16 @@ import java.util.List;
  * Determining which tickets are completely invalid; these are tickets that contain values which aren't valid for any
  * field.
  *
- * Adding together all of the invalid values produces the ticket scanning error rate. Finding ticket scanning error rate.
+ * Class adding together all of the invalid values produces the ticket scanning error rate and
+ * finding ticket scanning error rate.
  */
 public class Solution {
 
     /**
      * Finds ticket scanning error rate.
-     * @param rules the rules for ticket fields
-     * @param nearbyTickets the list of tickets
+     *
+     * @param rules  the rules for ticket fields
+     * @param nearbyTickets  the list of tickets
      * @return ticket scanning error rate
      */
     public int findTicketScanningErrorRate(List<List<Integer>> rules, List<List<Integer>> nearbyTickets){
@@ -34,9 +36,10 @@ public class Solution {
     }
 
     /**
-     * Checking whether exists at least one rule which can be satisfied by provided value.
-     * @param rules the list of rules
-     * @param value the value to analyze
+     * Checks whether exists at least one rule which can be satisfied by provided value.
+     *
+     * @param rules  the list of rules
+     * @param value  the value to analyze
      * @return whether exists at least one rule which can be satisfied by provided value
      */
     private boolean validValue(List<List<Integer>> rules, int value){

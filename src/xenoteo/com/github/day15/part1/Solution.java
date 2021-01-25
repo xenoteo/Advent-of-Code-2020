@@ -6,20 +6,25 @@ import java.util.List;
 /**
  * In the game, the players take turns saying numbers. They begin by taking turns reading from a list of starting
  * numbers. Then, each turn consists of considering the most recently spoken number:
- *  - If that was the first time the number has been spoken, the current player says 0.
- *  - Otherwise, the number had been spoken before; the current player announces how many turns apart the number
- *  is from when it was previously spoken.
+ * <ul>
+ *     <li>If that was the first time the number has been spoken, the current player says 0.</li>
+ *     <li>
+ *         Otherwise, the number had been spoken before; the current player announces how many turns apart the number
+ *         is from when it was previously spoken.
+ *     </li>
+ * </ul>
  *
- * Finding what number will be the 2020th number spoken.
+ * Class finding what number will be the 2020th number spoken.
  */
 public class Solution {
 
     /**
-     * Given starting numbers, finding what number will be the 2020th number spoken.
+     * Given starting numbers, finds what number will be the 2020th number spoken.
      * Using list to keep all the numbers spoken.
-     * TIme complexity is O(N^2).
-     * @param startingNumbers starting numbers
-     * @return number that will be the 2020th number spoken
+     * Time complexity is O(N^2).
+     *
+     * @param startingNumbers  the list starting numbers
+     * @return the number that will be the 2020th number spoken
      */
     public int find2020thNumber(List<Integer> startingNumbers){
         LinkedList<Integer> numbers = new LinkedList<>(startingNumbers);

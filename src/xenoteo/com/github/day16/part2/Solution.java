@@ -12,15 +12,17 @@ import java.util.*;
  * Determining which tickets are completely invalid; these are tickets that contain values which aren't valid for any
  * field.
  *
- * Discarding tickets containing invalid values entirely. Using the remaining valid tickets to determine which field is which.
+ * Class discarding tickets containing invalid values entirely;
+ * using the remaining valid tickets to determine which field is which.
  */
 public class Solution {
 
     /**
      * Determines which field is which and finds a multiplication of 6 departure values.
-     * @param rules the rules for ticket fields
-     * @param myTicket the ticket to analyze
-     * @param nearbyTickets the list of tickets
+     *
+     * @param rules  the rules for ticket fields
+     * @param myTicket  the ticket to analyze
+     * @param nearbyTickets  the list of tickets
      * @return ticket scanning error rate
      */
     public long multiplicationOfSixDepartureValues(Map<String, List<Integer>> rules,
@@ -33,8 +35,9 @@ public class Solution {
 
     /**
      * Finds invalid tickets and removes them from the list.
-     * @param rules the rules for ticket fields
-     * @param nearbyTickets the list of tickets
+     *
+     * @param rules  the rules for ticket fields
+     * @param nearbyTickets  the list of tickets
      */
     private void discardInvalidTickets(Map<String, List<Integer>> rules, List<List<Integer>> nearbyTickets){
         List<List<Integer>> ticketsToDelete = new ArrayList<>();
@@ -52,9 +55,10 @@ public class Solution {
     }
 
     /**
-     * Checking whether exists at least one rule which can be satisfied by provided value.
-     * @param rules the rules
-     * @param value the value to analyze
+     * Checks whether exists at least one rule which can be satisfied by provided value.
+     *
+     * @param rules  the rules
+     * @param value  the value to analyze
      * @return whether exists at least one rule which can be satisfied by provided value
      */
     private boolean validValue(Map<String, List<Integer>> rules, int value){
@@ -71,8 +75,9 @@ public class Solution {
 
     /**
      * Determines which field is which and finds 6 indexes of departure values.
-     * @param rules the rules for ticket fields
-     * @param nearbyTickets the list of tickets
+     *
+     * @param rules  the rules for ticket fields
+     * @param nearbyTickets  the list of tickets
      * @return 6 indexes of departure values
      */
     private List<Integer> findDepartureIndexes(Map<String, List<Integer>> rules, List<List<Integer>> nearbyTickets){
@@ -87,8 +92,9 @@ public class Solution {
 
     /**
      * Determines which field is which.
-     * @param rules the rules for ticket fields
-     * @param nearbyTickets the list of tickets
+     *
+     * @param rules  the rules for ticket fields
+     * @param nearbyTickets  the list of tickets
      * @return an array with ticket fields in the right order
      */
     private String[] findRuleIndexes(Map<String, List<Integer>> rules, List<List<Integer>> nearbyTickets){
@@ -111,8 +117,9 @@ public class Solution {
 
     /**
      * Fills the map of possible ticket fields indexes.
-     * @param rules the rules for ticket fields
-     * @param nearbyTickets the list of tickets
+     *
+     * @param rules  the rules for ticket fields
+     * @param nearbyTickets  the list of tickets
      * @return filled map of possible ticket fields indexes
      */
     private Map<String, List<Integer>> fillRulesPossibleIndexesMap(Map<String, List<Integer>> rules,
@@ -142,8 +149,9 @@ public class Solution {
 
     /**
      * Removes an index from rules possible indexes map.
-     * @param rulesPossibleIndexes rules possible indexes map
-     * @param i an index to remove
+     *
+     * @param rulesPossibleIndexes  the rules possible indexes map
+     * @param i  an index to remove
      */
     private void removeIndexFromRulesPossibleIndexes(Map<String, List<Integer>> rulesPossibleIndexes, int i){
         for (Map.Entry<String, List<Integer>> pair : rulesPossibleIndexes.entrySet()){
@@ -155,8 +163,9 @@ public class Solution {
 
     /**
      * Multiplies 6 departure values.
-     * @param myTicket a ticket values
-     * @param departureIndexes 6 indexes of departure values
+     *
+     * @param myTicket  a ticket values
+     * @param departureIndexes  6 indexes of departure values
      * @return a multiplication of 6 departure values
      */
     private long multiplicateDepartureValues(List<Integer> myTicket, List<Integer> departureIndexes){

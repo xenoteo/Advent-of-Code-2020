@@ -5,21 +5,26 @@ import java.util.*;
 /**
  * In the game, the players take turns saying numbers. They begin by taking turns reading from a list of starting
  * numbers. Then, each turn consists of considering the most recently spoken number:
- *  - If that was the first time the number has been spoken, the current player says 0.
- *  - Otherwise, the number had been spoken before; the current player announces how many turns apart the number
- *  is from when it was previously spoken.
+ * <ul>
+ *     <li>If that was the first time the number has been spoken, the current player says 0.</li>
+ *     <li>
+ *         Otherwise, the number had been spoken before; the current player announces how many turns apart the number
+ *         is from when it was previously spoken.
+ *     </li>
+ * </ul>
  *
- * Finding what number will be the Nth number spoken.
+ * Class finding what number will be the Nth number spoken.
  */
 public class Solution {
 
     /**
-     * Given starting numbers, finding what number will be the Nth number spoken.
+     * Given starting numbers, finds what number will be the Nth number spoken.
      * Using occurrences map to remember the two last occurrences of numbers.
      * Time complexity is O(N).
-     * @param startingNumbers starting numbers
-     * @param n N
-     * @return number that will be the Nth number spoken
+     *
+     * @param startingNumbers  the list of starting numbers
+     * @param n  N
+     * @return the number that will be the Nth number spoken
      */
     public int findNthNumber(List<Integer> startingNumbers, int n){
         Map<Integer, List<Integer>> occurrencesMap = makeOccurrencesMapOfStartingNumbers(startingNumbers);
@@ -37,9 +42,10 @@ public class Solution {
     /**
      * Updates an occurrences map keeping the length of occurrences list not greater than 2,
      * keeping that way the only two last occurrences of a number.
-     * @param occurrencesMap an occurrences map to update
-     * @param number a number to update
-     * @param index a number's the last occurrence
+     *
+     * @param occurrencesMap  an occurrences map to update
+     * @param number  a number to update
+     * @param index  a number's the last occurrence
      */
     private void updateOccurrencesMap(Map<Integer, List<Integer>> occurrencesMap, int number, int index){
         if (occurrencesMap.containsKey(number)){
@@ -55,8 +61,9 @@ public class Solution {
 
     /**
      * Fills the occurrences map with starting numbers.
-     * @param startingNumbers starting numbers
-     * @return occurrences map with starting numbers
+     *
+     * @param startingNumbers  the list of starting numbers
+     * @return an occurrences map with starting numbers
      */
     private Map<Integer, List<Integer>> makeOccurrencesMapOfStartingNumbers(List<Integer> startingNumbers){
         Map<Integer, List<Integer>> occurrencesMap = new HashMap<>();

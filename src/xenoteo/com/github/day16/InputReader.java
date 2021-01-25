@@ -9,20 +9,20 @@ import java.util.*;
  * Proceeding input file.
  *
  * Input example:
- * "
- * class: 1-3 or 5-7
- * row: 6-11 or 33-44
- * seat: 13-40 or 45-50
+ * <pre>
+ *     class: 1-3 or 5-7
+ *     row: 6-11 or 33-44
+ *     seat: 13-40 or 45-50
  *
- * your ticket:
- * 7,1,14
+ *     your ticket:
+ *     7,1,14
  *
- * nearby tickets:
- * 7,3,47
- * 40,4,50
- * 55,2,20
- * 38,6,12
- * "
+ *     nearby tickets:
+ *     7,3,47
+ *     40,4,50
+ *     55,2,20
+ *     38,6,12
+ * </pre>
  */
 public class InputReader {
     /**
@@ -44,7 +44,8 @@ public class InputReader {
 
     /**
      * Reads input file data to lists.
-     * @param path the path of the file
+     *
+     * @param path  the path of the file
      */
     public void readInputFile(URL path){
         rules = new HashMap<>();
@@ -79,7 +80,8 @@ public class InputReader {
 
     /**
      * Processes the string representing one rule.
-     * @param line the line with rule to process
+     *
+     * @param line  the line with rule to process
      */
     private void processRule(String line){
         List<Integer> rule = new ArrayList<>();
@@ -99,8 +101,9 @@ public class InputReader {
 
     /**
      * Processes the string representing one rule's range.
-     * @param rule rule's list to update
-     * @param range string representing the range
+     *
+     * @param rule  the rule's list to update
+     * @param range  the string representing the range
      */
     private void processRange(List<Integer> rule, String range){
         int split = range.indexOf('-');
@@ -112,7 +115,8 @@ public class InputReader {
 
     /**
      * Processes the string representing a ticket.
-     * @param line a line representing a ticket.
+     *
+     * @param line  a line representing a ticket.
      * @return a list representing a ticket
      */
     private List<Integer> processTicket(String line){
@@ -126,6 +130,7 @@ public class InputReader {
 
     /**
      * Gets the list of rules.
+     *
      * @return the list of rules
      */
     public Map<String, List<Integer>> getRules() {
@@ -142,6 +147,7 @@ public class InputReader {
 
     /**
      * Gets my ticket.
+     *
      * @return my ticket
      */
     public List<Integer> getMyTicket() {
@@ -150,6 +156,7 @@ public class InputReader {
 
     /**
      * Gets the list of nearby tickets.
+     *
      * @return the list of nearby tickets
      */
     public List<List<Integer>> getNearbyTickets() {
