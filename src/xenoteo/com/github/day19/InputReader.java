@@ -10,23 +10,25 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * Proceeding input file.
+ * Class proceeding input file.
  *
  * Input example:
- *  0: 4 1 5
- *  1: 2 3 | 3 2
- *  2: 4 4 | 5 5
- *  3: 4 5 | 5 4
- *  4: "a"
- *  5: "b"
+ * <pre>
+ *     0: 4 1 5
+ *     1: 2 3 | 3 2
+ *     2: 4 4 | 5 5
+ *     3: 4 5 | 5 4
+ *     4: "a"
+ *     5: "b"
  *
- *  ababbb
- *  bababa
- *  abbbab
- *  aaabbb
- *  aaaabbb
+ *     ababbb
+ *     bababa
+ *     abbbab
+ *     aaabbb
+ *     aaaabbb
+ * </pre>
  *
- * Reading dependent and independent rules to different maps, as well as reading all the messages to the list of strings.
+ * Class reading dependent and independent rules to different maps, as well as reading all the messages to the list of strings.
  */
 public class InputReader {
     private Map<Integer, String> autonomousRules;
@@ -44,7 +46,8 @@ public class InputReader {
 
     /**
      * Reads data from the input file with provided filename.
-     * @param path the path of the file
+     *
+     * @param path  the path of the file
      */
     public void readInputFile(URL path){
         setUpMaps();
@@ -75,7 +78,8 @@ public class InputReader {
 
     /**
      * Sets autonomous and dependent rules based on provided lines containing rules.
-     * @param ruleLines lines containing rules
+     *
+     * @param ruleLines  lines containing rules
      */
     private void proceedRuleLines(List<String> ruleLines){
         for (String line : ruleLines){
@@ -92,8 +96,9 @@ public class InputReader {
 
     /**
      * Proceeds autonomous rule line.
-     * @param index rule index
-     * @param ruleLine line containing a rule
+     *
+     * @param index  a rule index
+     * @param ruleLine  a line containing a rule
      */
     private void proceedAutonomousRule(int index, String ruleLine){
         String rule = ruleLine.substring(1, ruleLine.length() - 1);
@@ -102,8 +107,9 @@ public class InputReader {
 
     /**
      * Proceeds dependent rule line.
-     * @param index rule index
-     * @param numbers array of numbers strings (or "|" dividing different sub-rules)
+     *
+     * @param index  a rule index
+     * @param numbers  an array of numbers strings (or "|" dividing different sub-rules)
      */
     private void proceedDependentRule(int index, String[] numbers){
         List<List<Integer>> dependencies = new ArrayList<>();
@@ -123,6 +129,7 @@ public class InputReader {
 
     /**
      * Gets the map of autonomous rules.
+     *
      * @return autonomous rules
      */
     public Map<Integer, String> getAutonomousRules() {
@@ -131,6 +138,7 @@ public class InputReader {
 
     /**
      * Gets the map of dependent rules.
+     *
      * @return dependent rules
      */
     public Map<Integer, List<List<Integer>>> getDependentRules() {
@@ -139,6 +147,7 @@ public class InputReader {
 
     /**
      * Gets the list of messages.
+     *
      * @return the list of messages
      */
     public List<String> getMessages() {

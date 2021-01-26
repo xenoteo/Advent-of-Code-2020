@@ -9,13 +9,14 @@ import java.util.List;
  * of the operator, and multiplication still finds the product. However, the rules of operator precedence have changed.
  * Rather than evaluating multiplication before addition, addition is evaluated before multiplication.
  *
- * Finding a sum of evaluated expressions.
+ * Class finding a sum of evaluated expressions.
  */
 public class Solution {
 
     /**
      * Evaluates all the expressions and find their sum.
-     * @param expressions a list of expressions to evaluate
+     *
+     * @param expressions  a list of expressions to evaluate
      * @return a sum of evaluated expressions
      */
     public long sumOfEvaluatedExpressions(List<String> expressions){
@@ -28,7 +29,8 @@ public class Solution {
 
     /**
      * Evaluates one expression.
-     * @param expression an expression to evaluate
+     *
+     * @param expression  an expression to evaluate
      * @return the value of evaluated expression
      */
     private long evaluateExpression(StringBuilder expression){
@@ -42,7 +44,8 @@ public class Solution {
 
     /**
      * Finds an index of the most inner or the most right opening paren of the expression.
-     * @param expression an expression
+     *
+     * @param expression  an expression
      * @return an index of the most inner or the most right opening paren of the expression
      */
     private int leftIndexOfMostInnerParentheses(StringBuilder expression){
@@ -56,8 +59,9 @@ public class Solution {
 
     /**
      * Finds an index of closing paren for given opening paren.
-     * @param expression an expression
-     * @param leftParen an index of given opening paren
+     *
+     * @param expression  an expression
+     * @param leftParen  an index of given opening paren
      * @return an index of closing paren for given opening paren
      */
     private int rightIndexOfMostInnerParentheses(StringBuilder expression, int leftParen){
@@ -69,10 +73,11 @@ public class Solution {
     }
 
     /**
-     * Evaluates expression in given parentheses and creates a new expression with newly evaluated part.
-     * @param expression an expression
-     * @param leftParen an index of opening paren
-     * @param rightParen an index of closing paren
+     * Evaluates an expression in given parentheses and creates a new expression with newly evaluated part.
+     *
+     * @param expression  an expression
+     * @param leftParen  an index of opening paren
+     * @param rightParen  an index of closing paren
      * @return updated expression
      */
     private StringBuilder updateExpressionEvaluatingOneParentheses(StringBuilder expression,
@@ -97,7 +102,8 @@ public class Solution {
 
     /**
      * Evaluates an expression without parentheses.
-     * @param expression an expression without parentheses
+     *
+     * @param expression  an expression without parentheses
      * @return the value of evaluated expression
      */
     private long evaluateExpressionWithoutParentheses(StringBuilder expression){
@@ -109,7 +115,8 @@ public class Solution {
 
     /**
      * Evaluates the first sum and creates a new expression with newly evaluated part.
-     * @param expression an expression
+     *
+     * @param expression  an expression
      * @return updated expression
      */
     private StringBuilder updateExpressionEvaluatingOneSum(StringBuilder expression){
@@ -126,8 +133,9 @@ public class Solution {
 
     /**
      * Finds the start index of a sum subexpression.
-     * @param expression an expression
-     * @param sumIndex an index of plus sign
+     *
+     * @param expression  an expression
+     * @param sumIndex  an index of plus sign
      * @return the start index of a sum expression
      */
     private int startOfSum(StringBuilder expression, int sumIndex){
@@ -141,8 +149,9 @@ public class Solution {
 
     /**
      * Finds the end index of a sum subexpression.
-     * @param expression an expression
-     * @param sumIndex an index of plus sign
+     *
+     * @param expression  an expression
+     * @param sumIndex  an index of plus sign
      * @return the end index of a sum expression
      */
     private int endOfSUm(StringBuilder expression, int sumIndex){
@@ -155,11 +164,12 @@ public class Solution {
 
     /**
      * Counts a sum subexpression that starts and ends at given indexes.
-     * @param expression an expression
-     * @param startIndex the start index of a sum expression
-     * @param sumIndex an index of plus sign
-     * @param endIndex the end index of a sum expression
-     * @return evaluated sum
+     *
+     * @param expression  an expression
+     * @param startIndex  the start index of a sum expression
+     * @param sumIndex  an index of plus sign
+     * @param endIndex  the end index of a sum expression
+     * @return the evaluated sum
      */
     private int countSum(StringBuilder expression, int startIndex, int sumIndex, int endIndex){
         int leftNumber = Integer.parseInt((String) expression.subSequence(startIndex, sumIndex - 1));
@@ -169,8 +179,9 @@ public class Solution {
 
     /**
      * Evaluates an expression containing only multiplications (without parentheses an sums).
-     * @param expression an expression without parentheses an sums
-     * @return evaluated expression
+     *
+     * @param expression  an expression without parentheses an sums
+     * @return the evaluated expression
      */
     private long evaluateExpressionWithoutParenthesesAndSums(StringBuilder expression){
         long value = 1;

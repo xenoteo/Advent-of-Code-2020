@@ -10,13 +10,14 @@ import java.util.List;
  * Rather than evaluating multiplication before addition, the operators have the same precedence, and are evaluated
  * left-to-right regardless of the order in which they appear.
  *
- * Finding a sum of evaluated expressions.
+ * Class finding a sum of evaluated expressions.
  */
 public class Solution {
 
     /**
      * Evaluates all the expressions and find their sum.
-     * @param expressions a list of expressions to evaluate
+     *
+     * @param expressions  a list of expressions to evaluate
      * @return a sum of evaluated expressions
      */
     public long sumOfEvaluatedExpressions(List<String> expressions){
@@ -29,7 +30,8 @@ public class Solution {
 
     /**
      * Evaluates one expression.
-     * @param expression an expression to evaluate
+     *
+     * @param expression  an expression to evaluate
      * @return the value of evaluated expression
      */
     private long evaluateExpression(StringBuilder expression){
@@ -43,7 +45,8 @@ public class Solution {
 
     /**
      * Finds an index of the most inner or the most right opening paren of the expression.
-     * @param expression an expression
+     *
+     * @param expression  an expression
      * @return an index of the most inner or the most right opening paren of the expression
      */
     private int leftIndexOfMostInnerParentheses(StringBuilder expression){
@@ -57,8 +60,9 @@ public class Solution {
 
     /**
      * Finds an index of closing paren for given opening paren.
-     * @param expression an expression
-     * @param leftParen an index of given opening paren
+     *
+     * @param expression  an expression
+     * @param leftParen  an index of given opening paren
      * @return an index of closing paren for given opening paren
      */
     private int rightIndexOfMostInnerParentheses(StringBuilder expression, int leftParen){
@@ -71,10 +75,11 @@ public class Solution {
 
     /**
      * Evaluates expression in given parentheses and creates a new expression with newly evaluated part.
-     * @param expression an expression
-     * @param leftParen an index of opening paren
-     * @param rightParen an index of closing paren
-     * @return updated expression
+     *
+     * @param expression  an expression
+     * @param leftParen  an index of opening paren
+     * @param rightParen  an index of closing paren
+     * @return the updated expression
      */
     private StringBuilder updateExpressionEvaluatingOneParentheses(StringBuilder expression,
                                                                    int leftParen, int rightParen){
@@ -98,7 +103,8 @@ public class Solution {
 
     /**
      * Evaluates an expression without parentheses.
-     * @param expression an expression to evaluate
+     *
+     * @param expression  an expression to evaluate
      * @return the value of evaluated expression
      */
     private long evaluateExpressionWithoutParentheses(StringBuilder expression){
@@ -128,11 +134,12 @@ public class Solution {
 
     /**
      * Updates current value based on the last number and the operation to perform on this number.
-     * @param value current value
-     * @param expression an expression
-     * @param leftIndex the first index of the number
-     * @param rightIndex the last index of the number (excluded)
-     * @param lastOperation operation to perform on a number
+     *
+     * @param value  the current value
+     * @param expression  an expression
+     * @param leftIndex  the first index of the number
+     * @param rightIndex  the last index of the number (excluded)
+     * @param lastOperation  the operation to perform on a number
      * @return updated value
      */
     private long updateValue(long value, StringBuilder expression, int leftIndex, int rightIndex, char lastOperation){

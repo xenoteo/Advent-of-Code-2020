@@ -15,21 +15,28 @@ import java.util.Set;
  * Each cube only ever considers its neighbors: any of the 26 other cubes where any of their coordinates differ by at most 1.
  *
  * During a cycle, all cubes simultaneously change their state according to the following rules:
- * - If a cube is active and exactly 2 or 3 of its neighbors are also active, the cube remains active.
- *   Otherwise, the cube becomes inactive.
- * - If a cube is inactive but exactly 3 of its neighbors are active, the cube becomes active.
- *   Otherwise, the cube remains inactive.
+ * <ul>
+ *     <li>
+ *         If a cube is active and exactly 2 or 3 of its neighbors are also active, the cube remains active.
+ *         Otherwise, the cube becomes inactive.
+ *     </li>
+ *     <li>
+ *         If a cube is inactive but exactly 3 of its neighbors are active, the cube becomes active.
+ *         Otherwise, the cube remains inactive.
+ *     </li>
+ * </ul>
  *
  * Even though the pocket dimension is 3-dimensional, this initial state represents a small 2-dimensional slice of it.
  *
- * Counting how many cubes are left in the active state after the sixth cycle.
+ * Class counting how many cubes are left in the active state after the sixth cycle.
  */
 public class Solution {
 
     /**
      * Counts how many cubes are left in the active state after the sixth cycle.
-     * @param states initial state (2D slice of 3D where z = 0)
-     * @return number of active cubes after 6 cycles
+     *
+     * @param states  the initial state (2D slice of 3D where z = 0)
+     * @return the number of active cubes after 6 cycles
      */
     public int activeCubesAfter6Cycles(char[][] states){
         Set<Coordinates> activeCubes = fillActiveCubesSetFromInitialStates(states);
@@ -58,8 +65,9 @@ public class Solution {
 
     /**
      * Fills the set of coordinates of active cubes according to initial state.
-     * @param states initial state
-     * @return filled set of active cubes
+     *
+     * @param states  the initial state
+     * @return the filled set of active cubes
      */
     private Set<Coordinates> fillActiveCubesSetFromInitialStates(char[][] states){
         Set<Coordinates> activeCubes = new HashSet<>();
@@ -74,7 +82,8 @@ public class Solution {
 
     /**
      * Creates a set of all the neighbours of active cubes.
-     * @param activeCubes the set of active cubes
+     *
+     * @param activeCubes  the set of active cubes
      * @return a set of the active cubes neighbours
      */
     private Set<Coordinates> neighboursOfActiveCubes(Set<Coordinates> activeCubes){
@@ -87,8 +96,9 @@ public class Solution {
 
     /**
      * Fills the set with all cube's neighbours.
-     * @param neighbours the set to fill
-     * @param cube a cube
+     *
+     * @param neighbours  the set to fill
+     * @param cube  a cube
      */
     private void fillCubeNeighboursSet(Set<Coordinates> neighbours, Coordinates cube){
         for (int dx = - 1; dx <= 1; dx++){
@@ -104,8 +114,9 @@ public class Solution {
 
     /**
      * Counts active neighbours of the cube.
-     * @param activeCubes the set of all active cubes
-     * @param cube the cube to count neighbours
+     *
+     * @param activeCubes  the set of all active cubes
+     * @param cube  the cube to count neighbours
      * @return number of active neighbours of the cube
      */
     private int countActiveNeighbours(Set<Coordinates> activeCubes, Coordinates cube){

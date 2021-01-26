@@ -7,26 +7,28 @@ import java.util.regex.Pattern;
 
 /**
  * The rules for valid messages are numbered and build upon each other. For example:
- *
- *  0: 1 2
- *  1: "a"
- *  2: 1 3 | 3 1
- *  3: "b"
+ * <pre>
+ *     0: 1 2
+ *     1: "a"
+ *     2: 1 3 | 3 1
+ *     3: "b"
+ * </pre>
  *
  * Some of the rules have multiple lists of sub-rules separated by a pipe (|). This means that at least one list of
  * sub-rules must match.
  *
  * Some of the rules do contain loops.
  *
- * Determining the number of messages that completely match rule 0.
+ * Class determining the number of messages that completely match rule 0.
  */
 public class Solution {
 
     /**
      * Determines the number of messages that completely match rule 0.
-     * @param autonomousRules the map of autonomous rules
-     * @param dependentRules the map of dependent rules
-     * @param messages the list of messages
+     *
+     * @param autonomousRules  the map of autonomous rules
+     * @param dependentRules  the map of dependent rules
+     * @param messages  the list of messages
      * @return the number of messages that completely match rule 0
      */
     public int messagesMatchingRule0(Map<Integer, String> autonomousRules,
@@ -38,9 +40,10 @@ public class Solution {
 
     /**
      * Counts messages matching provided format.
-     * @param messages the list of messages
-     * @param regex provided format
-     * @return the number of messages matching privided format
+     *
+     * @param messages  the list of messages
+     * @param regex  provided format
+     * @return the number of messages matching provided format
      */
     private int countAppropriateMessages(List<String> messages, String regex){
         int count = 0;
@@ -59,11 +62,12 @@ public class Solution {
 
     /**
      * Finds regex representing a format of the provided rule.
-     * @param ruleIndex a rule's index
-     * @param autonomousRules the map of autonomous rules
-     * @param dependentRules the map of dependent rules
-     * @param memoryMap a memory map used for dynamic programming
-     * @return regex representing a format of the provided rule
+     *
+     * @param ruleIndex  a rule's index
+     * @param autonomousRules  the map of autonomous rules
+     * @param dependentRules  the map of dependent rules
+     * @param memoryMap  a memory map used for dynamic programming
+     * @return the regex representing a format of the provided rule
      */
     private String ruleFormat(int ruleIndex,
                               Map<Integer, String> autonomousRules,
