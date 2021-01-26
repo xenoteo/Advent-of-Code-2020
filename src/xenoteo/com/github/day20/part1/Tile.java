@@ -1,4 +1,4 @@
-package xenoteo.com.github.day20;
+package xenoteo.com.github.day20.part1;
 
 import java.util.*;
 
@@ -6,36 +6,24 @@ import java.util.*;
  * Class representing a tile with its data and neighbours.
  */
 public class Tile {
-    private final int id;
+    public final int id;
     private final List<String> lines;
     private char[][] sides;         // upper, right, bottom, left
-    private final int width;
-    private int neighboursNumber = 0;
+    public final int width;
+    private int neighboursNumber;
 
     public Tile(int id, List<String> lines) {
         this.id = id;
         this.lines = lines;
         width = lines.size();
+        neighboursNumber = 0;
         setUpSides();
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public char[][] getSides() {
-        return sides;
-    }
-
-    public int getWidth() {
-        return width;
     }
 
     public int getNeighboursNumber(){
         return neighboursNumber;
     }
 
-    @Override
     public String toString() {
         return "" + id;
     }
@@ -59,7 +47,8 @@ public class Tile {
 
     /**
      * Reverses char array.
-     * @param arr a char array
+     *
+     * @param arr  a char array
      * @return reversed char array
      */
     private char[] reverse(char[] arr){
@@ -72,14 +61,15 @@ public class Tile {
 
     /**
      * Checks whether provided tile cans be a neighbour.
-     * @param tile a tile
+     *
+     * @param tile  a tile
      * @return whether provided tile matches
      */
     public boolean matches(Tile tile){
         for (int i = 0; i < 4; i++){
             for (int j = 0; j < 4; j++){
-                if (Arrays.equals(sides[i], tile.sides[j])
-                        || Arrays.equals(sides[i], reverse(tile.sides[j])))
+                if (Arrays.equals(this.sides[i], tile.sides[j])
+                        || Arrays.equals(this.sides[i], reverse(tile.sides[j])))
                     return true;
             }
         }
@@ -88,10 +78,11 @@ public class Tile {
 
     /**
      * Assigns neighbour to the tile.
-     * @param tile a tile-future neighbour
+     *
+     * @param tile a  tile-future neighbour
      */
     public void assignNeighbour(Tile tile){
-        neighboursNumber++;
+        this.neighboursNumber++;
         tile.neighboursNumber++;
     }
 }

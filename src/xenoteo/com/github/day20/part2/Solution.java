@@ -1,6 +1,6 @@
-package xenoteo.com.github.day20.part1;
+package xenoteo.com.github.day20.part2;
 
-import java.util.*;
+import java.util.List;
 
 /**
  * The camera array consists of many cameras; rather than produce a single square image, they produce many smaller
@@ -8,19 +8,34 @@ import java.util.*;
  * a single monochrome image tile with a random unique ID number. The tiles arrived in a random order. Worse yet,
  * the camera array appears to be malfunctioning: each image tile has been rotated and flipped to a random orientation.
  *
- * Class reassembling the original image by orienting the tiles so they fit together.
+ * The borders of each tile are not part of the actual image; starting by removing them.
+ * Then removing the gaps to form the actual image.
+ *
+ * Searching for sea monsters! A sea monster will look like this:
+ * <pre>
+ *                       #
+ *     #    ##    ##    ###
+ *      #  #  #  #  #  #
+ * </pre>
+ *
+ * When looking for this pattern in the image, the spaces can be anything; only the # need to match.
+ * Also, the image might need to be rotated or flipped before it's oriented correctly to find sea monsters.
+ *
+ * Class determining how rough the waters are in the sea monsters' habitat by counting the number of #
+ * that are not part of a sea monster.
  */
 public class Solution {
 
     /**
-     * Multiplying together the IDs of the four corner tiles.
+     * Determines how rough the waters are in the sea monsters' habitat by counting the number of #
+     * that are not part of a sea monster.
      *
      * @param tiles  a list of tiles
-     * @return the multiplication of four corner IDs
+     * @return the number of # that are not part of a sea monster
      */
-    public long cornersIdMultiplication(List<Tile> tiles){
+    public int waterRough(List<Tile> tiles){
         assignNeighboursToTiles(tiles);
-        return countCornersMultiplication(tiles);
+        return -1;
     }
 
     /**
@@ -40,14 +55,4 @@ public class Solution {
         }
     }
 
-    /**
-     * Counts the multiplication of corner tile IDs.
-     *
-     * @param tiles  a list of tiles
-     * @return the multiplication of four corner IDs
-     */
-    private long countCornersMultiplication(List<Tile> tiles) {
-        return tiles.stream().filter(tile -> tile.getNeighboursNumber() == 2)
-                .mapToLong(tile -> tile.id).reduce(1, (a, b) -> a * b);
-    }
 }

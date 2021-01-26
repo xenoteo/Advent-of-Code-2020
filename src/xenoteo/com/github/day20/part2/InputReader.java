@@ -1,33 +1,38 @@
-package xenoteo.com.github.day20;
+package xenoteo.com.github.day20.part2;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.URL;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 /**
- * Proceeding input file.
+ * Class proceeding input file.
  *
  * Input file consist of squared tiles, each of them is preceded by its ID; all the tiles are divided by an empty line.
  *
  * Example of one tile:
- *  Tile 3167:
- *  .##..#...#
- *  ##.#......
- *  .##......#
- *  #.....#..#
- *  ........##
- *  .#.......#
- *  ###.#.....
- *  ###.....##
- *  #..#....#.
- *  ..####..##
+ * <pre>
+ *     Tile 3167:
+ *     .##..#...#
+ *     ##.#......
+ *     .##......#
+ *     #.....#..#
+ *     ........##
+ *     .#.......#
+ *     ###.#.....
+ *     ###.....##
+ *     #..#....#.
+ *     ..####..##
+ * </pre>
  */
 public class InputReader {
 
     /**
      * Reads data from the input file with provided filename.
-     * @param path the path of the file
+     *
+     * @param path  the path of the file
      * @return a map representing tiles (index -> list of lines)
      */
     public List<Tile> readInputFile(URL path){
