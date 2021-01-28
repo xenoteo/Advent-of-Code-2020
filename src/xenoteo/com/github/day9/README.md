@@ -44,7 +44,7 @@ Here is a larger example which only considers the previous **5** numbers (and ha
 
 In this example, after the 5-number preamble, almost every number is the sum of two of the previous 5 numbers; the only number that does not follow this rule is `127`.
 
-The first step of attacking the weakness in the XMAS data is to find the first number in the list (after the preamble) which is not the sum of two of the 25 numbers before it. **What is the first number that does not have this property?**
+The first step of attacking the weakness in the XMAS data is to find the first number in the list (after the preamble) which is **not** the sum of two of the 25 numbers before it. **What is the first number that does not have this property?**
 
 ## Part 2
 he final step in breaking the XMAS encryption relies on the invalid number you just found: you must **find a contiguous set of at least two numbers** in your list which sum to the invalid number from step 1.
