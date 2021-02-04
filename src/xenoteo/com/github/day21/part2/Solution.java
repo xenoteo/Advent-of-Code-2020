@@ -1,4 +1,4 @@
-package xenoteo.com.github.day21.part1;
+package xenoteo.com.github.day21.part2;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -19,28 +19,25 @@ import java.util.stream.Stream;
  *     sqjhc mxmxvkd sbzzf (contains fish)
  * </pre>
  *
- * The first step is to determine which ingredients can't possibly contain any of the allergens in any food in your list.
- *
- * Class determine which ingredients cannot possibly contain any of the allergens in your list and
- * counting how many times any of those ingredients appear.
+ * Class arranging the ingredients alphabetically by their allergen and separating them by commas to produce
+ * the canonical dangerous ingredient list.
  */
 public class Solution {
 
     /**
-     * Counts the occurrences of ingredients that cannot possibly contain any of the allergens in the english list of allergens.
-     *
-     * The array of ingredients at index i corresponds to the array of allergens at index i.
+     * Founded the dictionary from allergens to ingredients, arranges the ingredients alphabetically by their allergen
+     * and separates them by commas to produce the canonical dangerous ingredient list.
      *
      * @param ingredients  the list of ingredients arrays in unknown language
      * @param allergens  the list of allergens arrays in English
-     * @return the number of occurrences of requested ingredients
+     * @return the canonical dangerous ingredient list
      */
-    public int countOccurrencesOfIngredientsNotFromEnglishList(List<String[]> ingredients, List<String[]> allergens){
+    public String canonicalDangerousIngredientList(List<String[]> ingredients, List<String[]> allergens){
         HashMap<String, String> dictionary = findDictionary(ingredients, allergens);
-        return (int) ingredients.stream()
-                .flatMap(Stream::of)
-                .filter(ingredient -> !dictionary.containsValue(ingredient))
-                .count();
+        return dictionary.entrySet().stream()
+                .sorted(Map.Entry.comparingByKey())
+                .map(Map.Entry::getValue)
+                .collect(Collectors.joining(","));
     }
 
     /**
