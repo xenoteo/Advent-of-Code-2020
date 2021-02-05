@@ -4,7 +4,6 @@ import java.util.LinkedList;
 import java.util.stream.IntStream;
 
 /**
- *
  * Playing a game of Combat.
  *
  * Before the game starts, the cards are split so each player has their own deck. Then, the game consists of a series
