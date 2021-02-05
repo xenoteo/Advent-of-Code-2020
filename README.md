@@ -94,3 +94,6 @@ Short descriptions of problems. Complete problem contents can be found in README
 - \[[day 21](https://github.com/xenoteo/Advent-2020/tree/master/src/xenoteo/com/github/day21)\] - given the list of ingredients in unknown language and the list of allergens contained by the ingredients in English.
   - \[[part 1](https://github.com/xenoteo/Advent-2020/blob/master/src/xenoteo/com/github/day21/part1/Solution.java)\] - counting the occurrences of ingredients that cannot possibly contain any of the allergens in the english list of allergens.
   - \[[part 2](https://github.com/xenoteo/Advent-2020/blob/master/src/xenoteo/com/github/day21/part2/Solution.java)\] - arranging the ingredients alphabetically by their allergen and separating them by commas to produce the canonical dangerous ingredient list.
+- \[[day 22](https://github.com/xenoteo/Advent-2020/tree/master/src/xenoteo/com/github/day22)\]
+  - \[[part 1](https://github.com/xenoteo/Advent-2020/blob/master/src/xenoteo/com/github/day22/part1/Solution.java)\] - playing a game of Combat.
+  - \[[part 2](https://github.com/xenoteo/Advent-2020/blob/master/src/xenoteo/com/github/day22/part2/Solution.java)\] - playing a game of Recursive Combat.
