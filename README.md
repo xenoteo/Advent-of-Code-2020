@@ -97,3 +97,6 @@ Short descriptions of problems. Complete problem contents can be found in README
 - \[[day 22](https://github.com/xenoteo/Advent-2020/tree/master/src/xenoteo/com/github/day22)\]
   - \[[part 1](https://github.com/xenoteo/Advent-2020/blob/master/src/xenoteo/com/github/day22/part1/Solution.java)\] - playing a game of Combat.
   - \[[part 2](https://github.com/xenoteo/Advent-2020/blob/master/src/xenoteo/com/github/day22/part2/Solution.java)\] - playing a game of Recursive Combat.
+- \[[day 23](https://github.com/xenoteo/Advent-2020/tree/master/src/xenoteo/com/github/day23)\] - playing a game of Crab's mixing cups.
+  - \[[part 1](https://github.com/xenoteo/Advent-2020/blob/master/src/xenoteo/com/github/day23/part1/Solution.java)\] - there are only 9 cups and 100 moves.
+  - \[[part 2](https://github.com/xenoteo/Advent-2020/blob/master/src/xenoteo/com/github/day23/part2/Solution.java)\] - there are 1000000 cups and 10000000 moves.
