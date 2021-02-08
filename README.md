@@ -100,3 +100,6 @@ Short descriptions of problems. Complete problem contents can be found in README
 - \[[day 23](https://github.com/xenoteo/Advent-2020/tree/master/src/xenoteo/com/github/day23)\] - playing a game of Crab's mixing cups.
   - \[[part 1](https://github.com/xenoteo/Advent-2020/blob/master/src/xenoteo/com/github/day23/part1/Solution.java)\] - there are only 9 cups and 100 moves.
   - \[[part 2](https://github.com/xenoteo/Advent-2020/blob/master/src/xenoteo/com/github/day23/part2/Solution.java)\] - there are 1000000 cups and 10000000 moves.
+- \[[day 24](https://github.com/xenoteo/Advent-2020/tree/master/src/xenoteo/com/github/day24)\]
+  - \[[part 1](https://github.com/xenoteo/Advent-2020/blob/master/src/xenoteo/com/github/day24/part1/Solution.java)\] - flipping hexagonal tiles.
+  - \[[part 2](https://github.com/xenoteo/Advent-2020/blob/master/src/xenoteo/com/github/day24/part2/Solution.java)\] - hexagonal Game of Life.
