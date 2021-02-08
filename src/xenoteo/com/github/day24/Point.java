@@ -1,5 +1,6 @@
 package xenoteo.com.github.day24;
 
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -13,6 +14,11 @@ public class Point {
     public Point() {
         x = 0;
         y = 0;
+    }
+
+    public Point(double x, int y) {
+        this.x = x;
+        this.y = y;
     }
 
     @Override
@@ -54,5 +60,21 @@ public class Point {
                 y--;
             }
         }
+    }
+
+    /**
+     * Gets the list of all 6 neighbours of the point.
+     *
+     * @return the list of adjacent points
+     */
+    public List<Point> neighbours(){
+        return List.of(
+                new Point(x - 0.5, y + 1),
+                new Point(x + 0.5, y + 1),
+                new Point(x + 1, y ),
+                new Point(x + 0.5, y - 1),
+                new Point(x - 0.5, y - 1),
+                new Point(x - 1, y)
+                );
     }
 }
