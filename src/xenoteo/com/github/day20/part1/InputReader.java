@@ -24,6 +24,8 @@ import java.util.*;
  *     #..#....#.
  *     ..####..##
  * </pre>
+ *
+ * Class parsing the input file to the list of tile objects.
  */
 public class InputReader {
 
@@ -31,7 +33,7 @@ public class InputReader {
      * Reads data from the input file with provided filename.
      *
      * @param path  the path of the file
-     * @return a map representing tiles (index -> list of lines)
+     * @return the list of tiles
      */
     public List<Tile> readInputFile(URL path){
         try {

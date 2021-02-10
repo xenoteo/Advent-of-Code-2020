@@ -8,7 +8,8 @@ import java.util.*;
  * a single monochrome image tile with a random unique ID number. The tiles arrived in a random order. Worse yet,
  * the camera array appears to be malfunctioning: each image tile has been rotated and flipped to a random orientation.
  *
- * Class reassembling the original image by orienting the tiles so they fit together.
+ * Class counting the multiplication of the IDs of the four corner tiles that would be corners after reassembling the
+ * original image by orienting the tiles so they fit together.
  */
 public class Solution {
 
