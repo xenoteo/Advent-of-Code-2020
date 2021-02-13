@@ -104,3 +104,5 @@ Short descriptions of problems. Complete problem contents can be found in README
 - \[[day 24](https://github.com/xenoteo/Advent-2020/tree/master/src/xenoteo/com/github/day24)\]
   - \[[part 1](https://github.com/xenoteo/Advent-2020/blob/master/src/xenoteo/com/github/day24/part1/Solution.java)\] - flipping hexagonal tiles.
   - \[[part 2](https://github.com/xenoteo/Advent-2020/blob/master/src/xenoteo/com/github/day24/part2/Solution.java)\] - hexagonal Game of Life.
+- \[[day 25](https://github.com/xenoteo/Advent-2020/tree/master/src/xenoteo/com/github/day25)\]
+  - \[[part 1](https://github.com/xenoteo/Advent-2020/blob/master/src/xenoteo/com/github/day25/part1/Solution.java)\] - finding the encryption key having the door's and the card's public keys.
