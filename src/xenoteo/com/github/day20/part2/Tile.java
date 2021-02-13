@@ -63,8 +63,8 @@ public class Tile {
      * @return the left side of the tile
      */
     private boolean[] leftSide() {
-        var edge = new boolean[data.length];
-        for (var y = 0; y < data.length; y++) {
+        boolean[] edge = new boolean[data.length];
+        for (int y = 0; y < data.length; y++) {
             edge[y] = data[y][0];
         }
         return edge;
@@ -76,8 +76,8 @@ public class Tile {
      * @return the right side of the tile
      */
     private boolean[] rightSide() {
-        var edge = new boolean[data.length];
-        for (var y = 0; y < data.length; y++) {
+        boolean[] edge = new boolean[data.length];
+        for (int y = 0; y < data.length; y++) {
             edge[y] = data[y][data[0].length - 1];
         }
         return edge;

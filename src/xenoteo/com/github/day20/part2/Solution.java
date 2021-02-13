@@ -65,17 +65,29 @@ public class Solution {
      */
     private boolean[][] completeImage(List<Tile> tiles){
         Map<Integer, Set<Tile>> tilesMap = tilesMap(tiles);
-        int length = (int) Math.sqrt(tilesMap.size());
+        int tilesPerSide = (int) Math.sqrt(tilesMap.size());
         Map<Point, Tile> arrangement =
-                findArrangement(length, tilesMap, new HashMap<>(), new HashSet<>(tilesMap.keySet()), new Point(0, 0));
+                findArrangement(tilesPerSide, tilesMap, new HashMap<>(), new HashSet<>(tilesMap.keySet()), new Point(0, 0));
         int tileLength = tiles.get(0).data.length;
-        var imageSize = length * (tileLength - 2);
+        return assembleImage(tilesPerSide, tileLength, arrangement);
+    }
+
+    /**
+     * Having the tiles' arrangement assembles them all together to the complete image.
+     *
+     * @param tilesPerSide  the number of tiles contained by one image's side
+     * @param tileLength  the length of a tile
+     * @param arrangement  the tiles' arrangement
+     * @return  the complete image
+     */
+    private boolean[][] assembleImage(int tilesPerSide, int tileLength, Map<Point, Tile> arrangement){
+        int imageSize = tilesPerSide * (tileLength - 2);
         boolean[][] image = new boolean[imageSize][imageSize];
         int y = 0;
-        for (int row = 0; row < length; row++) {
+        for (int row = 0; row < tilesPerSide; row++) {
             for (int tileHeight = 1; tileHeight < tileLength - 1; tileHeight++) {
                 int x = 0;
-                for (int col = 0; col < length; col++) {
+                for (int col = 0; col < tilesPerSide; col++) {
                     boolean[][] tile = arrangement.get(new Point(col, row)).data;
                     for (int tileWidth = 1; tileWidth < tileLength - 1; tileWidth++) {
                         image[y][x] = tile[tileHeight][tileWidth];
@@ -113,14 +125,14 @@ public class Solution {
     /**
      * Fins the right arrangement of tiles.
      *
-     * @param length  the number of tiles contained by one image's side
+     * @param tilesPerSide  the number of tiles contained by one image's side
      * @param allTiles  the map of all the tiles
      * @param selectedTiles  the map of selected tiles
      * @param tilesRemaining  the set of IDs of remaining tiles
      * @param point  the point
      * @return  the map from point to tile representing right arrangement
      */
-    private Map<Point, Tile> findArrangement(int length,
+    private Map<Point, Tile> findArrangement(int tilesPerSide,
                                              Map<Integer, Set<Tile>> allTiles,
                                              Map<Point, Tile> selectedTiles,
                                              Set<Integer> tilesRemaining,
@@ -145,7 +157,7 @@ public class Solution {
             selectedTiles.put(point, tile);
             tilesRemaining.remove(tile.id);
             Map<Point, Tile> result =
-                    findArrangement(length, allTiles, selectedTiles, tilesRemaining, nextPoint(length, point));
+                    findArrangement(tilesPerSide, allTiles, selectedTiles, tilesRemaining, nextPoint(tilesPerSide, point));
             if (!result.isEmpty()) {
                 return result;
             } else {
@@ -160,12 +172,12 @@ public class Solution {
     /**
      * Finds the next point (the next place where a tile need to be located) of the image.
      *
-     * @param length  the number of tiles contained by one image's side
+     * @param tilesPerSide  the number of tiles contained by one image's side
      * @param point  the point
      * @return the next point
      */
-    private Point nextPoint(int length, Point point) {
-        if (point.y + 1 == length)
+    private Point nextPoint(int tilesPerSide, Point point) {
+        if (point.y + 1 == tilesPerSide)
             return new Point(point.x + 1, 0);
         else
             return new Point(point.x, point.y + 1);
