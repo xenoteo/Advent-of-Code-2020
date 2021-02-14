@@ -36,7 +36,7 @@ Here are a few more examples:
 Given your starting numbers, **what will be the `2020th` number spoken?**
 
 ## Part 2
-Impressed, the Elves issue you a challenge: determine the 30000000th number spoken. For example, given the same starting numbers as above:
+Impressed, the Elves issue you a challenge: determine the `30000000`th number spoken. For example, given the same starting numbers as above:
 - Given `0,3,6`, the `30000000`th number spoken is `175594`.
 - Given `1,3,2`, the `30000000`th number spoken is `2578`.
 - Given `2,1,3`, the `30000000`th number spoken is `3544142`.
